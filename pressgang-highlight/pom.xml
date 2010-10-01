@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jboss.pressgang</groupId>
+  <artifactId>pressgang-highlight</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>JBoss Community DocBook Code Highlighter</name>
+  <url>http://www.jboss.org</url>
+
+  <organization>
+    <name>JBoss.org</name>
+    <url>http://www.jboss.org</url>
+  </organization>
+
+  <scm>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/pressgang-highlight/</developerConnection>
+    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/pressgang-highlight/</connection>
+  </scm>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.uwyn</groupId>
+      <artifactId>jhighlight</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.richfaces.docs</groupId>
+      <artifactId>highlight</artifactId>
+      <version>3.1.4.GA</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.0</version>
+          <configuration>
+            <source>1.5</source>
+            <target>1.5</target>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>jboss-releases-repository</id>
+      <name>JBoss Releases Repository</name>
+      <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>jboss-snapshots-repository</id>
+      <name>JBoss Snapshots Repository</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>

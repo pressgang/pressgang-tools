@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jboss.pressgang</groupId>
+  <artifactId>pressgang-xslt-ns</artifactId>
+  <packaging>jar</packaging>
+  <version>1.2.0-SNAPSHOT</version>
+
+  <name>JBoss Community DocBook XSLT namespaced (XSD variant)</name>
+  <description>
+    The main project to transform DocBook XML into XHTML and other formats for JBoss Community Documentation.
+    Use this with XSD based docbook XML files. Use jbossorg-docbook-xslt with DTD based XML files.
+  </description>
+  <url>http://www.jboss.org</url>
+
+  <organization>
+    <name>JBoss.org</name>
+    <url>http://www.jboss.org</url>
+  </organization>
+
+  <scm>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/pressgang-xslt-ns/</developerConnection>
+    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/pressgang-xslt-ns/</connection>
+  </scm>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>net.sf.docbook</groupId>
+      <artifactId>docbook-xsl-ns</artifactId>
+      <version>1.74.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.docs</groupId>
+      <artifactId>highlight</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>jboss-public-repository-group</id>
+      <name>JBoss Public Repository Group</name>
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      <layout>default</layout>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jboss-public-repository-group</id>
+      <name>JBoss Public Repository Group</name>
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <plugins>      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+           <execution>
+             <id>attach-sources</id>
+               <goals>
+                 <goal>jar</goal>
+               </goals>
+           </execution>
+        </executions>
+      </plugin>
+    </plugins>    
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>jboss-releases-repository</id>
+      <name>JBoss Releases Repository</name>
+      <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+    </repository>    
+    <snapshotRepository>
+      <id>jboss-snapshots-repository</id>
+      <name>JBoss Snapshots Repository</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>
+<!--
+  NOTE:  This is the old repo information, with the build extensions missing
+         the attach-sources jar execution goal.
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>repository.jboss.org</id>
+      <name>JBoss Repository</name>
+      <url>file://${maven.repository.root}</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots.jboss.org</id>
+      <name>JBoss Snapshot Repository</name>
+      <url>dav:https://snapshots.jboss.org/maven2</url>
+    </snapshotRepository>
+  </distributionManagement>
+-->

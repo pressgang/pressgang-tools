@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.jboss.pressgang</groupId>
+  <artifactId>jboss-community-styles</artifactId>
+  <packaging>pom</packaging>
+  <version>1.1.1</version>
+  
+  <name>JBoss Community documentation support</name>
+  <description>Multiproject for all artifacts which support JBoss Community documentation.</description>
+  <url>http://www.jboss.org/pressgang/</url>
+
+  <organization>
+    <name>JBoss.org</name>
+    <url>http://www.jboss.org</url>
+  </organization>
+
+  <scm>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/</developerConnection>
+    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/</connection>
+  </scm>
+
+  <modules>
+    <module>pressgang-highlight</module><!--highlighting packaged used for all XML and Java code samples-->
+    <module>pressgang-fonts</module><!--base fonts used in the jbossorg styles-->
+    <module>pressgang-xslt</module><!-- non-namespaced (DTD variant) -->
+    <module>pressgang-xslt-ns</module><!-- namespaced (XSD variant) -->
+    <module>pressgang-jdocbook-style</module><!--primary style module used for jbossorg blue and grey styles-->
+  </modules>
+
+  <prerequisites>
+    <maven>2.2.1</maven>
+  </prerequisites>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jboss.maven.plugins</groupId>
+        <artifactId>maven-jdocbook-style-plugin</artifactId>
+        <version>2.0.0</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-2</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>jboss-releases-repository</id>
+      <name>JBoss Releases Repository</name>
+      <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>jboss-snapshots-repository</id>
+      <name>JBoss Snapshots Repository</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+</project>
