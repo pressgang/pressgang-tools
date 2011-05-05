@@ -7,7 +7,7 @@
 
     <!-- Support files for build process. -->
     <property name="support.dir"           value="${support.basedir}/support"/>
-    <property name="styles.dir"            value="${support.basedir}/styles"/>
+    <property name="styles.dir"            value="${support.basedir}/pressgang-styles"/>
 
     <!-- Set DocBook stylesheets. -->
     <property name="db.style.fopdf"        value="fopdf.xsl"/>
@@ -160,7 +160,7 @@
             </fileset>
         </copy>
         <copy todir="${basedir}/${build.dir}/${lang}/html/css">
-            <fileset dir="${styles.dir}/${lang}">
+            <fileset dir="pressgang-styles/${lang}">
                 <include name="**/*.css"/>
             </fileset>
         </copy>
@@ -185,7 +185,7 @@
             </fileset>
         </copy>
         <copy todir="${basedir}/${build.dir}/${lang}/html_single/css">
-            <fileset dir="${styles.dir}/${lang}">
+            <fileset dir="pressgang-styles/${lang}">
                 <include name="**/*.css"/>
             </fileset>
         </copy>
@@ -212,7 +212,7 @@
         </copy>
 
         <copy todir="${basedir}/${build.dir}/${lang}/shared/css">
-            <fileset dir="${styles.dir}/${lang}">
+            <fileset dir="pressgang-styles/${lang}">
                 <include name="**/*.css"/>
             </fileset>
         </copy>
