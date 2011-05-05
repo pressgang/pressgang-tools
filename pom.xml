@@ -62,16 +62,60 @@
     </pluginRepository>
   </pluginRepositories>
 
-  <prerequisites>
-    <maven>3.0.3</maven>
-  </prerequisites>
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.0</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <inherited>true</inherited>
+              <configuration>
+                <rules>
+                  <requireJavaVersion>
+                    <version>[1.6.0,)</version>
+                  </requireJavaVersion>
+                  <requireMavenVersion>
+                    <version>[3.0.3,)</version>
+                  </requireMavenVersion>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.1.2</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>jar</goal>
+                <goal>test-jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.jboss.maven.plugins</groupId>
         <artifactId>maven-jdocbook-style-plugin</artifactId>
         <version>2.0.0</version>
         <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <!-- Entry needed to create, install and deploy sources jars -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
       </plugin>
     </plugins>
 
