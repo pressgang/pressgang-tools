@@ -1,5 +1,5 @@
-Developing Drools and jBPM
-==========================
+Developing Pressgang
+====================
 
 **If you want to build or contribute to a pressgang project, read this document.**
 
