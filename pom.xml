@@ -20,8 +20,8 @@
   </organization>
 
   <scm>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss-community-styles/</developerConnection>
-    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss-community-styles/</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk//</developerConnection>
+    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk/</connection>
   </scm>
 
   <modules>
