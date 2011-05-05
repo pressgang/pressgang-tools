@@ -1,4 +1,4 @@
-<project name="DocSupport" default="all.doc" basedir=".">
+<project name="DocSupport" default="all.doc" basedir="../">
 
     <dirname property="support.basedir" file="${ant.file.DocSupport}"/>
 
