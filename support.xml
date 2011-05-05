@@ -6,7 +6,7 @@
     <property name="build.dir"             value="build"/>
 
     <!-- Support files for build process. -->
-    <property name="support.dir"           value="${support.basedir}/support"/>
+    <property name="support.dir"           value="${support.basedir}/pressgang-docbook-support"/>
     <property name="styles.dir"            value="${support.basedir}/pressgang-styles"/>
 
     <!-- Set DocBook stylesheets. -->
@@ -23,7 +23,7 @@
 
     <!-- Classpath for the build tools. -->
     <path id="lib.classpath">
-        <fileset dir="${support.dir}/lib">
+        <fileset dir="pressgang-docbook-support/lib">
             <include name="**/*.jar"/>
         </fileset>
     </path>
