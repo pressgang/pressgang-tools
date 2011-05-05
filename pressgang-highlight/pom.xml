@@ -4,24 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss.pressgang</groupId>
+    <artifactId>pressgang-tools</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+  </parent>
 
-  <groupId>org.jboss.pressgang</groupId>
   <artifactId>pressgang-highlight</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0.0-SNAPSHOT</version>
 
   <name>JBoss Community DocBook Code Highlighter</name>
-  <url>http://www.jboss.org</url>
-
-  <organization>
-    <name>JBoss.org</name>
-    <url>http://www.jboss.org</url>
-  </organization>
-
-  <scm>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/pressgang-highlight/</developerConnection>
-    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/jboss_community_styles/pressgang-highlight/</connection>
-  </scm>
 
   <dependencies>
     <dependency>
@@ -51,27 +42,6 @@
         </plugin>
       </plugins>
     </pluginManagement>
-
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav</artifactId>
-        <version>1.0-beta-2</version>
-      </extension>
-    </extensions>
   </build>
-
-  <distributionManagement>
-    <repository>
-      <id>jboss-releases-repository</id>
-      <name>JBoss Releases Repository</name>
-      <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>jboss-snapshots-repository</id>
-      <name>JBoss Snapshots Repository</name>
-      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
 
 </project>
