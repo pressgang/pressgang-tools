@@ -25,9 +25,9 @@
       <version>1.74.0</version>
     </dependency>
     <dependency>
-      <groupId>org.jboss.docs</groupId>
-      <artifactId>highlight</artifactId>
-      <version>1.0.0</version>
+      <groupId>org.jboss.pressgang</groupId>
+      <artifactId>pressgang-highlight</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
 
