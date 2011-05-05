@@ -25,6 +25,17 @@
       <groupId>org.richfaces.docs</groupId>
       <artifactId>highlight</artifactId>
       <version>3.1.4.GA</version>
+      <!-- Exclude that eclipse stuff to avoid making the jdocbook-plugin resources goal really slow because of repository connections -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.eclipse.wst.css</groupId>
+          <artifactId>core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.eclipse.wst.sse</groupId>
+          <artifactId>core</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
 
