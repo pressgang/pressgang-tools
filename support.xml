@@ -23,7 +23,7 @@
 
     <!-- Classpath for the build tools. -->
     <path id="lib.classpath">
-        <fileset dir="pressgang-docbook-support/lib">
+        <fileset dir="${support.dir}/lib">
             <include name="**/*.jar"/>
         </fileset>
     </path>
@@ -160,7 +160,7 @@
             </fileset>
         </copy>
         <copy todir="${basedir}/${build.dir}/${lang}/html/css">
-            <fileset dir="pressgang-styles/${lang}">
+            <fileset dir="${styles.dir}/${lang}">
                 <include name="**/*.css"/>
             </fileset>
         </copy>
@@ -185,7 +185,7 @@
             </fileset>
         </copy>
         <copy todir="${basedir}/${build.dir}/${lang}/html_single/css">
-            <fileset dir="pressgang-styles/${lang}">
+            <fileset dir="${styles.dir}/${lang}">
                 <include name="**/*.css"/>
             </fileset>
         </copy>
@@ -212,7 +212,7 @@
         </copy>
 
         <copy todir="${basedir}/${build.dir}/${lang}/shared/css">
-            <fileset dir="pressgang-styles/${lang}">
+            <fileset dir="${styles.dir}/${lang}">
                 <include name="**/*.css"/>
             </fileset>
         </copy>
