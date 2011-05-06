@@ -1,3 +1,5 @@
+package org.jboss.highlight;
+
 /**
  * License Agreement.
  *
@@ -19,12 +21,6 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
  */
 
-package org.jboss.highlight;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -34,28 +30,34 @@ import java.util.Properties;
 import com.uwyn.jhighlight.renderer.Renderer;
 
 /**
+ * HACK for MPJDOCBOOK-73: This file is duplicated from
+ * (org.richfaces.docs:highlight:jar:3.3.1.SP3)!org/richfaces/highlight/XhtmlRendererFactory.java
+ * to avoid the org.richfaces.docs:highlight dependency.
+ * That dependency has invalid dependencies on eclipse css and sse (and excluding them doesn't help)
+ * which slow down the build considerably.
+ * Furthermore, because XhtmlRendererFactory seems to have disappeared from richfaces 4, for now,
+ * the lesser evil of duplicating that file has been chosen.
  * @author Maksim Kaszynski
- * @author Mark Newton (mark.newton@jboss.org)
- *
+ * @author Geoffrey De Smet
  */
-public class XhtmlRendererFactory {
-	
-	private static XhtmlRendererFactory instance;
+public class RichfacesXhtmlRendererFactory {
+
+	private static RichfacesXhtmlRendererFactory instance;
 	public static final String fileName = "renderers.properties";
 	private Map<Object, Object> classNames = new HashMap<Object, Object>();
 
-	public static final XhtmlRendererFactory instance() {
-		synchronized(XhtmlRendererFactory.class) {
+	public static final RichfacesXhtmlRendererFactory instance() {
+		synchronized(RichfacesXhtmlRendererFactory.class) {
 			if (instance == null) {
-				instance = new XhtmlRendererFactory();
+				instance = new RichfacesXhtmlRendererFactory();
 			}
 		}
-		
+
 		return instance;
 	}
-	
-	public XhtmlRendererFactory() {
-		InputStream resourceAsStream = 
+
+	public RichfacesXhtmlRendererFactory() {
+		InputStream resourceAsStream =
 			getClass().getResourceAsStream(fileName);
 		try {
 			Properties props = new Properties();
@@ -64,31 +66,33 @@ public class XhtmlRendererFactory {
 			resourceAsStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
-		
-	}
-	
-	public Renderer getRenderer(String type) {
-		
-		// Look first for our own renderer, followed by the richfaces renderer
-		Renderer renderer = null;
-		Object object = classNames.get(type.toLowerCase());
-		if (object != null) {
-			String className = object.toString();
-			
-			try {
-				Class<?> class1 = Class.forName(className);
-				Object newInstance = class1.newInstance();
-				if (newInstance instanceof Renderer) {
-					return (Renderer) newInstance;
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			renderer = RichfacesXhtmlRendererFactory.instance().getRenderer(type);
 		}
-		
+
+	}
+
+	public Renderer getRenderer(String type) {
+
+		Renderer renderer =
+			com.uwyn.jhighlight.renderer.XhtmlRendererFactory.getRenderer(type);
+		if (renderer == null) {
+			Object object = classNames.get(type.toLowerCase());
+			if (object != null) {
+				String className = object.toString();
+
+				try {
+					Class<?> class1 = Class.forName(className);
+					Object newInstance = class1.newInstance();
+					if (newInstance instanceof Renderer) {
+						return (Renderer) newInstance;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
 		return renderer;
 	}
+
 }
+
