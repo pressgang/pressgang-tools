@@ -335,17 +335,15 @@ First check it builds:
 
 If everything is perfect:
 
-* Define the version and adjust the poms.
+* Define the version and create the tag:
+
+        $ mvn release:prepare
 
     * Note: Always use at least 3 numbers in the version: '2.0.0' is fine, `2.0` is not fine.
 
-* Create the tag:
-
-        $ svn copy https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk/ https://svn.jboss.org/repos/pressgang/pressgang-tools/tags/2.0.0/ -m"Release 2.0.0"
-
 * Deploy the artifacts:
 
-        $ mvn clean deploy
+        $ mvn release:perform
 
 * Go to [nexus](https://repository.jboss.org/nexus), menu item *Staging repositories*, find your staging repository.
 
