@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.jboss.pressgang</groupId>
   <artifactId>pressgang-tools</artifactId>
   <packaging>pom</packaging>
-  <version>2.0.0-SNAPSHOT</version>
+  <version>2.0.0</version>
   
   <name>Pressgang tools</name>
   <description>Multiproject for all artifacts which support JBoss Community documentation.</description>
@@ -20,8 +18,8 @@
   </organization>
 
   <scm>
-    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</developerConnection>
+    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/tags/pressgang-tools-2.0.0</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/tags/pressgang-tools-2.0.0</developerConnection>
   </scm>
 
   <modules>
