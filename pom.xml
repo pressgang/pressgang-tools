@@ -20,8 +20,8 @@
   </organization>
 
   <scm>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk/</developerConnection>
-    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk/</connection>
+    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</connection>
+    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</developerConnection>
   </scm>
 
   <modules>
@@ -116,6 +116,13 @@
         <!-- Entry needed to create, install and deploy sources jars -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.0</version>
+        <configuration>
+          <tagBase>https://svn.jboss.org/repos/pressgang/pressgang-tools/tags</tagBase>
+        </configuration>
       </plugin>
     </plugins>
 
