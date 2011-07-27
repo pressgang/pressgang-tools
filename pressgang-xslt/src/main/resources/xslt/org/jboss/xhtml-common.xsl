@@ -22,7 +22,7 @@
   
   <xsl:param name="generate.legalnotice.link" select="1"/>
   <xsl:param name="generate.revhistory.link" select="0"/>
-  
+
   <!-- This is needed to generate the correct xhtml-strict DOCTYPE on the front page.
       We can't use indentation as the algorithm inserts linebreaks into the markup
       created for callouts. This means that callouts appear on different lines than
@@ -521,50 +521,50 @@ Version: 1.72.0
     <xsl:variable name="hiliter" select="rf:getRenderer($factory, string($language))"/>
 
     <pre class="{$language}">
-    <xsl:choose>
-      <xsl:when test="$hiliter">
-            <xsl:for-each select="node()">
-              <xsl:choose>
-                <xsl:when test="self::text()">
-                  <xsl:variable name="child.content" select="."/>
-          
+      <xsl:choose>
+        <xsl:when test="$hiliter">
+          <xsl:for-each select="node()">
+            <xsl:choose>
+              <xsl:when test="self::text()">
+                <xsl:variable name="child.content" select="."/>
                   <xsl:value-of select="jhr:highlight($hiliter, $language, string($child.content), 'UTF-8', true())"
-            xmlns:jhr="com.uwyn.jhighlight.renderer.Renderer" disable-output-escaping="yes"/>
-          </xsl:when>
-                <xsl:otherwise>
-                  <!-- Support a single linkend in HTML -->
-                  <xsl:variable name="targets" select="key('id', @linkends)"/>
-                  <xsl:variable name="target" select="$targets[1]"/>
-                  <xsl:choose>
-                  <xsl:when test="$target">
-                  <a>
-                    <xsl:if test="@id or @xml:id">
-                      <xsl:attribute name="id">
-                        <xsl:value-of select="(@id|@xml:id)[1]"/>
-                      </xsl:attribute>
-                    </xsl:if>
-                    <xsl:attribute name="href">
-                      <xsl:call-template name="href.target">
-                        <xsl:with-param name="object" select="$target"/>
-                      </xsl:call-template>
+                      xmlns:jhr="com.uwyn.jhighlight.renderer.Renderer" disable-output-escaping="yes"/>
+              </xsl:when>
+
+              <xsl:otherwise>
+                <!-- Support a single linkend in HTML -->
+                <xsl:variable name="targets" select="key('id', @linkends)"/>
+                <xsl:variable name="target" select="$targets[1]"/>
+                <xsl:choose>
+                <xsl:when test="$target">
+                <a>
+                  <xsl:if test="@id or @xml:id">
+                    <xsl:attribute name="id">
+                      <xsl:value-of select="(@id|@xml:id)[1]"/>
                     </xsl:attribute>
-                    <xsl:apply-templates select="." mode="callout-bug"/>
-                  </a>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:call-template name="anchor"/>
-                    <xsl:apply-templates select="." mode="callout-bug"/>
-                  </xsl:otherwise>
-                  </xsl:choose>
+                  </xsl:if>
+                  <xsl:attribute name="href">
+                    <xsl:call-template name="href.target">
+                      <xsl:with-param name="object" select="$target"/>
+                    </xsl:call-template>
+                  </xsl:attribute>
+                  <xsl:apply-templates select="." mode="callout-bug"/>
+                </a>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:call-template name="anchor"/>
+                  <xsl:apply-templates select="." mode="callout-bug"/>
                 </xsl:otherwise>
-              </xsl:choose>
-            </xsl:for-each>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </pre>
+                </xsl:choose>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </pre>
     
   </xsl:template>
 
