@@ -1,13 +1,13 @@
 <?xml version='1.0'?>
  
 <!--
-	Copyright 2007 Red Hat, Inc.
-	License: GPL
-	Author: Jeff Fearn <jfearn@redhat.com>
-	Author: Tammy Fox <tfox@redhat.com>
-	Author: Andy Fitzsimon <afitzsim@redhat.com>
-	Author: Mark Newton <mark.newton@jboss.org>
-	Author: Pete Muir
+  Copyright 2007 Red Hat, Inc.
+  License: GPL
+  Author: Jeff Fearn <jfearn@redhat.com>
+  Author: Tammy Fox <tfox@redhat.com>
+  Author: Andy Fitzsimon <afitzsim@redhat.com>
+  Author: Mark Newton <mark.newton@jboss.org>
+  Author: Pete Muir
 -->
 
 <!DOCTYPE xsl:stylesheet [
@@ -16,11 +16,11 @@
  ]>
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-		        version="1.0"
-		        xmlns="http://www.w3.org/TR/xhtml1/transitional"
-		        xmlns:fo="http://www.w3.org/1999/XSL/Format"
+            version="1.0"
+            xmlns="http://www.w3.org/TR/xhtml1/transitional"
+            xmlns:fo="http://www.w3.org/1999/XSL/Format"
                 xmlns:jbh="java:org.jboss.highlight.renderer.FORenderer"
-		        exclude-result-prefixes="jbh">
+            exclude-result-prefixes="jbh">
 
 <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.72.0/fo/docbook.xsl"/>
 
@@ -229,64 +229,64 @@ Reason: This includes the callout.icon.size attribute for SVGs, we also add padd
 <xsl:attribute-set name="xref.properties">
   <xsl:attribute name="font-style">italic</xsl:attribute>
   <xsl:attribute name="color">
-	<xsl:choose>
-		<xsl:when test="ancestor::note or ancestor::caution or ancestor::important or ancestor::warning or ancestor::tip">
-			<xsl:text>#aee6ff</xsl:text>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:text>#0066cc</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:choose>
+    <xsl:when test="ancestor::note or ancestor::caution or ancestor::important or ancestor::warning or ancestor::tip">
+      <xsl:text>#aee6ff</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>#0066cc</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
   </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="monospace.properties">
-	<xsl:attribute name="font-size">9pt</xsl:attribute>
-	<xsl:attribute name="font-family">
-		<xsl:value-of select="$monospace.font.family"/>
-	</xsl:attribute>
+  <xsl:attribute name="font-size">9pt</xsl:attribute>
+  <xsl:attribute name="font-family">
+    <xsl:value-of select="$monospace.font.family"/>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="monospace.verbatim.properties" use-attribute-sets="verbatim.properties monospace.properties">
-	<xsl:attribute name="text-align">start</xsl:attribute>
-	<xsl:attribute name="wrap-option">wrap</xsl:attribute>
-	<xsl:attribute name="hyphenation-character">&#x25BA;</xsl:attribute>
+  <xsl:attribute name="text-align">start</xsl:attribute>
+  <xsl:attribute name="wrap-option">wrap</xsl:attribute>
+  <xsl:attribute name="hyphenation-character">&#x25BA;</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:param name="shade.verbatim" select="1"/>
 <xsl:attribute-set name="shade.verbatim.style">
   <xsl:attribute name="wrap-option">wrap</xsl:attribute>
   <xsl:attribute name="background-color">
-	<xsl:choose>
-		<xsl:when test="ancestor::note"> <xsl:text>#D6DEE0</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::caution"> <xsl:text>#FAF8ED</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::important"> <xsl:text>#E1EEF4</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::warning"> <xsl:text>#FAF8ED</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::tip"> <xsl:text>#D5E1D5</xsl:text> </xsl:when>
-		<xsl:otherwise>
-			<xsl:text>#EDE7C8</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:choose>
+    <xsl:when test="ancestor::note"> <xsl:text>#D6DEE0</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::caution"> <xsl:text>#FAF8ED</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::important"> <xsl:text>#E1EEF4</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::warning"> <xsl:text>#FAF8ED</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::tip"> <xsl:text>#D5E1D5</xsl:text> </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>#EDE7C8</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
   </xsl:attribute>
   <xsl:attribute name="color">
-	<xsl:choose>
-		<xsl:when test="ancestor::note"> <xsl:text>#334558</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::caution"> <xsl:text>#334558</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::important"> <xsl:text>#334558</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::warning"> <xsl:text>#334558</xsl:text> </xsl:when>
-		<xsl:when test="ancestor::tip"> <xsl:text>#334558</xsl:text> </xsl:when>
-		<xsl:otherwise>
-			<xsl:text>#333</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:choose>
+    <xsl:when test="ancestor::note"> <xsl:text>#334558</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::caution"> <xsl:text>#334558</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::important"> <xsl:text>#334558</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::warning"> <xsl:text>#334558</xsl:text> </xsl:when>
+    <xsl:when test="ancestor::tip"> <xsl:text>#334558</xsl:text> </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>#333</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
   </xsl:attribute>
-	<xsl:attribute name="padding-left">12pt</xsl:attribute>
-	<xsl:attribute name="padding-right">12pt</xsl:attribute>
-	<xsl:attribute name="padding-top">6pt</xsl:attribute>
-	<xsl:attribute name="padding-bottom">6pt</xsl:attribute>
-	<xsl:attribute name="margin-left">
-		<xsl:value-of select="$title.margin.left"/>
-	</xsl:attribute>
+  <xsl:attribute name="padding-left">12pt</xsl:attribute>
+  <xsl:attribute name="padding-right">12pt</xsl:attribute>
+  <xsl:attribute name="padding-top">6pt</xsl:attribute>
+  <xsl:attribute name="padding-bottom">6pt</xsl:attribute>
+  <xsl:attribute name="margin-left">
+    <xsl:value-of select="$title.margin.left"/>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="verbatim.properties">
@@ -364,12 +364,12 @@ article toc
 
 <!-- The horrible list spacing problems, this is much better. -->
 <xsl:attribute-set name="list.block.spacing">
-	<xsl:attribute name="space-before.optimum">2em</xsl:attribute>
-	<xsl:attribute name="space-before.minimum">1em</xsl:attribute>
-	<xsl:attribute name="space-before.maximum">3em</xsl:attribute>
-	<xsl:attribute name="space-after.optimum">0.1em</xsl:attribute>
-	<xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
-	<xsl:attribute name="space-after.maximum">0.1em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">2em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">1em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">3em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0.1em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.1em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.1em</xsl:attribute>
 </xsl:attribute-set>
 
 <!-- Some padding inside tables -->
@@ -419,122 +419,122 @@ article toc
 <xsl:param name="section.title.color" select="$title.color" />
 
 <xsl:attribute-set name="section.title.level1.properties">
-	<xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:value-of select="$body.font.master * 1.6"/>
-		<xsl:text>pt</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.6"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="section.title.level2.properties">
-	<xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:value-of select="$body.font.master * 1.4"/>
-		<xsl:text>pt</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.4"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="section.title.level3.properties">
-	<xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:value-of select="$body.font.master * 1.3"/>
-		<xsl:text>pt</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.3"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="section.title.level4.properties">
-	<xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:value-of select="$body.font.master * 1.2"/>
-		<xsl:text>pt</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.2"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="section.title.level5.properties">
-	<xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:value-of select="$body.font.master * 1.1"/>
-		<xsl:text>pt</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master * 1.1"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="section.title.level6.properties">
-	<xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:value-of select="$body.font.master"/>
-		<xsl:text>pt</xsl:text>
-	</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$section.title.color"/></xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:value-of select="$body.font.master"/>
+    <xsl:text>pt</xsl:text>
+  </xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="section.title.properties">
-	<xsl:attribute name="font-family">
-		<xsl:value-of select="$title.font.family"/>
-	</xsl:attribute>
-	<xsl:attribute name="font-weight">bold</xsl:attribute>
-	<!-- font size is calculated dynamically by section.heading template -->
-	<xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
-	<xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
-	<xsl:attribute name="space-before.optimum">1.0em</xsl:attribute>
-	<xsl:attribute name="space-before.maximum">1.2em</xsl:attribute>
-	<xsl:attribute name="text-align">left</xsl:attribute>
-	<xsl:attribute name="start-indent"><xsl:value-of select="$title.margin.left"/></xsl:attribute>
+  <xsl:attribute name="font-family">
+    <xsl:value-of select="$title.font.family"/>
+  </xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
+  <!-- font size is calculated dynamically by section.heading template -->
+  <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.8em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">1.0em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">1.2em</xsl:attribute>
+  <xsl:attribute name="text-align">left</xsl:attribute>
+  <xsl:attribute name="start-indent"><xsl:value-of select="$title.margin.left"/></xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:param name="titlepage.color" select="$title.color"/>
 
 <xsl:attribute-set name="book.titlepage.recto.style">
-	<xsl:attribute name="font-family">
-		<xsl:value-of select="$title.fontset"/>
-	</xsl:attribute>
-	<xsl:attribute name="color"><xsl:value-of select="$titlepage.color"/></xsl:attribute>
-	<xsl:attribute name="font-weight">bold</xsl:attribute>
-	<xsl:attribute name="font-size">12pt</xsl:attribute>
-	<xsl:attribute name="text-align">center</xsl:attribute>
+  <xsl:attribute name="font-family">
+    <xsl:value-of select="$title.fontset"/>
+  </xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$titlepage.color"/></xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
+  <xsl:attribute name="font-size">12pt</xsl:attribute>
+  <xsl:attribute name="text-align">center</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="component.title.properties">
-	<xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
-	<xsl:attribute name="space-before.optimum"><xsl:value-of select="concat($body.font.master, 'pt')"/></xsl:attribute>
-	<xsl:attribute name="space-before.minimum"><xsl:value-of select="concat($body.font.master, 'pt')"/></xsl:attribute>
-	<xsl:attribute name="space-before.maximum"><xsl:value-of select="concat($body.font.master, 'pt')"/></xsl:attribute>
-	<xsl:attribute name="hyphenate">false</xsl:attribute>
-	<xsl:attribute name="color">
-		<xsl:choose>
-			<xsl:when test="not(parent::chapter | parent::article | parent::appendix)"><xsl:value-of select="$title.color"/></xsl:when>
-		</xsl:choose>
-	</xsl:attribute>
-	<xsl:attribute name="text-align">
-		<xsl:choose>
-			<xsl:when test="((parent::article | parent::articleinfo) and not(ancestor::book) and not(self::bibliography))				 or (parent::slides | parent::slidesinfo)">center</xsl:when>
-			<xsl:otherwise>left</xsl:otherwise>
-		</xsl:choose>
-	</xsl:attribute>
-	<xsl:attribute name="start-indent"><xsl:value-of select="$title.margin.left"/></xsl:attribute>
+  <xsl:attribute name="keep-with-next.within-column">always</xsl:attribute>
+  <xsl:attribute name="space-before.optimum"><xsl:value-of select="concat($body.font.master, 'pt')"/></xsl:attribute>
+  <xsl:attribute name="space-before.minimum"><xsl:value-of select="concat($body.font.master, 'pt')"/></xsl:attribute>
+  <xsl:attribute name="space-before.maximum"><xsl:value-of select="concat($body.font.master, 'pt')"/></xsl:attribute>
+  <xsl:attribute name="hyphenate">false</xsl:attribute>
+  <xsl:attribute name="color">
+    <xsl:choose>
+      <xsl:when test="not(parent::chapter | parent::article | parent::appendix)"><xsl:value-of select="$title.color"/></xsl:when>
+    </xsl:choose>
+  </xsl:attribute>
+  <xsl:attribute name="text-align">
+    <xsl:choose>
+      <xsl:when test="((parent::article | parent::articleinfo) and not(ancestor::book) and not(self::bibliography))         or (parent::slides | parent::slidesinfo)">center</xsl:when>
+      <xsl:otherwise>left</xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
+  <xsl:attribute name="start-indent"><xsl:value-of select="$title.margin.left"/></xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="chapter.titlepage.recto.style">
-	<xsl:attribute name="color"><xsl:value-of select="$chapter.title.color"/></xsl:attribute>
-	<xsl:attribute name="background-color">white</xsl:attribute>
-	<xsl:attribute name="font-size">
-		<xsl:choose>
-			<xsl:when test="$l10n.gentext.language = 'ja-JP'">
-				<xsl:value-of select="$body.font.master * 1.7"/>
-				<xsl:text>pt</xsl:text>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:text>24pt</xsl:text>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:attribute>
-	<xsl:attribute name="font-weight">bold</xsl:attribute>
-	<xsl:attribute name="text-align">left</xsl:attribute>
-	<!--xsl:attribute name="wrap-option">no-wrap</xsl:attribute-->
-	<xsl:attribute name="padding-left">1em</xsl:attribute>
-	<xsl:attribute name="padding-right">1em</xsl:attribute>
+  <xsl:attribute name="color"><xsl:value-of select="$chapter.title.color"/></xsl:attribute>
+  <xsl:attribute name="background-color">white</xsl:attribute>
+  <xsl:attribute name="font-size">
+    <xsl:choose>
+      <xsl:when test="$l10n.gentext.language = 'ja-JP'">
+        <xsl:value-of select="$body.font.master * 1.7"/>
+        <xsl:text>pt</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>24pt</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
+  <xsl:attribute name="text-align">left</xsl:attribute>
+  <!--xsl:attribute name="wrap-option">no-wrap</xsl:attribute-->
+  <xsl:attribute name="padding-left">1em</xsl:attribute>
+  <xsl:attribute name="padding-right">1em</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="preface.titlepage.recto.style">
-	<xsl:attribute name="font-family">
-		<xsl:value-of select="$title.fontset"/>
-	</xsl:attribute>
-	<xsl:attribute name="color">#4a5d75</xsl:attribute>
-	<xsl:attribute name="font-size">12pt</xsl:attribute>
-	<xsl:attribute name="font-weight">bold</xsl:attribute>
+  <xsl:attribute name="font-family">
+    <xsl:value-of select="$title.fontset"/>
+  </xsl:attribute>
+  <xsl:attribute name="color">#4a5d75</xsl:attribute>
+  <xsl:attribute name="font-size">12pt</xsl:attribute>
+  <xsl:attribute name="font-weight">bold</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="part.titlepage.recto.style">
@@ -552,8 +552,8 @@ Version:1.72
   <!-- highlight this entry? -->
   <xsl:if test="ancestor::thead or ancestor::tfoot">
     <xsl:attribute name="font-weight">bold</xsl:attribute>
-	<xsl:attribute name="background-color">#4a5d75</xsl:attribute>
-	<xsl:attribute name="color">white</xsl:attribute>
+  <xsl:attribute name="background-color">#4a5d75</xsl:attribute>
+  <xsl:attribute name="color">white</xsl:attribute>
   </xsl:if>
 </xsl:template>
 
@@ -576,7 +576,7 @@ Version:1.72
     </xsl:attribute>
   </xsl:if>
   <xsl:if test="ancestor::thead or ancestor::tfoot">
-	<xsl:attribute name="background-color">#4a5d75</xsl:attribute>
+  <xsl:attribute name="background-color">#4a5d75</xsl:attribute>
   </xsl:if>
 </xsl:template>
 
@@ -610,216 +610,216 @@ Reason: Remove font family, size and weight overrides
 Version:1.72
 -->
 <xsl:template name="preface.titlepage.recto">
-	<fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="preface.titlepage.recto.style" margin-left="{$title.margin.left}">
+  <fo:block xmlns:fo="http://www.w3.org/1999/XSL/Format" xsl:use-attribute-sets="preface.titlepage.recto.style" margin-left="{$title.margin.left}">
 <xsl:call-template name="component.title.nomarkup">
 <xsl:with-param name="node" select="ancestor-or-self::preface[1]"/>
 </xsl:call-template></fo:block>
-	<xsl:choose>
-		<xsl:when test="prefaceinfo/subtitle">
-			<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/subtitle"/>
-		</xsl:when>
-		<xsl:when test="docinfo/subtitle">
-			<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/subtitle"/>
-		</xsl:when>
-		<xsl:when test="info/subtitle">
-			<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/subtitle"/>
-		</xsl:when>
-		<xsl:when test="subtitle">
-			<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="subtitle"/>
-		</xsl:when>
-	</xsl:choose>
+  <xsl:choose>
+    <xsl:when test="prefaceinfo/subtitle">
+      <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/subtitle"/>
+    </xsl:when>
+    <xsl:when test="docinfo/subtitle">
+      <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/subtitle"/>
+    </xsl:when>
+    <xsl:when test="info/subtitle">
+      <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/subtitle"/>
+    </xsl:when>
+    <xsl:when test="subtitle">
+      <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="subtitle"/>
+    </xsl:when>
+  </xsl:choose>
 
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/corpauthor"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/corpauthor"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/corpauthor"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/authorgroup"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/authorgroup"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/authorgroup"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/author"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/author"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/author"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/othercredit"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/othercredit"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/othercredit"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/releaseinfo"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/releaseinfo"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/releaseinfo"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/copyright"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/copyright"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/copyright"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/legalnotice"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/legalnotice"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/legalnotice"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/pubdate"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/pubdate"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/pubdate"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/revision"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/revision"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/revision"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/revhistory"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/revhistory"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/revhistory"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/abstract"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/abstract"/>
-	<xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/abstract"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/corpauthor"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/corpauthor"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/corpauthor"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/authorgroup"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/authorgroup"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/authorgroup"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/author"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/author"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/author"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/othercredit"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/othercredit"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/othercredit"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/releaseinfo"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/releaseinfo"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/releaseinfo"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/copyright"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/copyright"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/copyright"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/legalnotice"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/legalnotice"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/legalnotice"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/pubdate"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/pubdate"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/pubdate"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/revision"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/revision"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/revision"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/revhistory"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/revhistory"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/revhistory"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="prefaceinfo/abstract"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="docinfo/abstract"/>
+  <xsl:apply-templates mode="preface.titlepage.recto.auto.mode" select="info/abstract"/>
 </xsl:template>
 
 
 <xsl:template name="pickfont-sans">
-	<xsl:variable name="font">
-		<xsl:choose>
-			<xsl:when test="$l10n.gentext.language = 'ja-JP'">
-				<xsl:text>KochiMincho,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'ko-KR'">
-				<xsl:text>BaekmukBatang,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'zh-CN'">
-				<xsl:text>ARPLKaitiMGB,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'bn-IN'">
-				<xsl:text>LohitBengali,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'ta-IN'">
-				<xsl:text>LohitTamil,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'pa-IN'">
-				<xsl:text>LohitPunjabi,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'hi-IN'">
-				<xsl:text>LohitHindi,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'gu-IN'">
-				<xsl:text>LohitGujarati,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'zh-TW'">
-				<xsl:text>ARPLMingti2LBig5,</xsl:text>
-			</xsl:when>
-		</xsl:choose>
-	</xsl:variable>
-	<xsl:choose>
-		<xsl:when test="$fop1.extensions != 0">
-		  <xsl:copy-of select="$font"/><xsl:text>DejaVuLGCSans,sans-serif</xsl:text>
-		</xsl:when>
-		<xsl:otherwise>
-		  <xsl:copy-of select="$font"/><xsl:text>sans-serif</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:variable name="font">
+    <xsl:choose>
+      <xsl:when test="$l10n.gentext.language = 'ja-JP'">
+        <xsl:text>KochiMincho,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'ko-KR'">
+        <xsl:text>BaekmukBatang,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'zh-CN'">
+        <xsl:text>ARPLKaitiMGB,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'bn-IN'">
+        <xsl:text>LohitBengali,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'ta-IN'">
+        <xsl:text>LohitTamil,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'pa-IN'">
+        <xsl:text>LohitPunjabi,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'hi-IN'">
+        <xsl:text>LohitHindi,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'gu-IN'">
+        <xsl:text>LohitGujarati,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'zh-TW'">
+        <xsl:text>ARPLMingti2LBig5,</xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:choose>
+    <xsl:when test="$fop1.extensions != 0">
+      <xsl:copy-of select="$font"/><xsl:text>DejaVuLGCSans,sans-serif</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:copy-of select="$font"/><xsl:text>sans-serif</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <xsl:template name="pickfont-serif">
-	<xsl:variable name="font">
-		<xsl:choose>
-			<xsl:when test="$l10n.gentext.language = 'ja-JP'">
-				<xsl:text>KochiMincho,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'ko-KR'">
-				<xsl:text>BaekmukBatang,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'zh-CN'">
-				<xsl:text>ARPLKaitiMGB,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'bn-IN'">
-				<xsl:text>LohitBengali,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'ta-IN'">
-				<xsl:text>LohitTamil,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'pa-IN'">
-				<xsl:text>LohitPunjabi,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'hi-IN'">
-				<xsl:text>LohitHindi,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'gu-IN'">
-				<xsl:text>LohitGujarati,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'zh-TW'">
-				<xsl:text>ARPLMingti2LBig5,</xsl:text>
-			</xsl:when>
-		</xsl:choose>
-	</xsl:variable>
-	<xsl:choose>
-		<xsl:when test="$fop1.extensions != 0">
-		  <xsl:copy-of select="$font"/><xsl:text>DejaVuLGCSans,serif</xsl:text>
-		</xsl:when>
-		<xsl:otherwise>
-		  <xsl:copy-of select="$font"/><xsl:text>serif</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:variable name="font">
+    <xsl:choose>
+      <xsl:when test="$l10n.gentext.language = 'ja-JP'">
+        <xsl:text>KochiMincho,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'ko-KR'">
+        <xsl:text>BaekmukBatang,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'zh-CN'">
+        <xsl:text>ARPLKaitiMGB,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'bn-IN'">
+        <xsl:text>LohitBengali,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'ta-IN'">
+        <xsl:text>LohitTamil,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'pa-IN'">
+        <xsl:text>LohitPunjabi,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'hi-IN'">
+        <xsl:text>LohitHindi,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'gu-IN'">
+        <xsl:text>LohitGujarati,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'zh-TW'">
+        <xsl:text>ARPLMingti2LBig5,</xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:choose>
+    <xsl:when test="$fop1.extensions != 0">
+      <xsl:copy-of select="$font"/><xsl:text>DejaVuLGCSans,serif</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:copy-of select="$font"/><xsl:text>serif</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <xsl:template name="pickfont-mono">
-	<xsl:variable name="font">
-		<xsl:choose>
-			<xsl:when test="$l10n.gentext.language = 'ja-JP'">
-				<xsl:text>KochiMincho,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'ko-KR'">
-				<xsl:text>BaekmukBatang,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'zh-CN'">
-				<xsl:text>ARPLKaitiMGB,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'bn-IN'">
-				<xsl:text>LohitBengali,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'ta-IN'">
-				<xsl:text>LohitTamil,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'pa-IN'">
-				<xsl:text>LohitPunjabi,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'hi-IN'">
-				<xsl:text>LohitHindi,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'gu-IN'">
-				<xsl:text>LohitGujarati,</xsl:text>
-			</xsl:when>
-			<xsl:when test="$l10n.gentext.language = 'zh-TW'">
-				<xsl:text>ARPLMingti2LBig5,</xsl:text>
-			</xsl:when>
-		</xsl:choose>
-	</xsl:variable>
-	<xsl:choose>
-		<xsl:when test="$fop1.extensions != 0">
-		  <xsl:copy-of select="$font"/><xsl:text>DejaVuLGCSans,monospace</xsl:text>
-		</xsl:when>
-		<xsl:otherwise>
-		  <xsl:copy-of select="$font"/><xsl:text>monospace</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:variable name="font">
+    <xsl:choose>
+      <xsl:when test="$l10n.gentext.language = 'ja-JP'">
+        <xsl:text>KochiMincho,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'ko-KR'">
+        <xsl:text>BaekmukBatang,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'zh-CN'">
+        <xsl:text>ARPLKaitiMGB,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'bn-IN'">
+        <xsl:text>LohitBengali,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'ta-IN'">
+        <xsl:text>LohitTamil,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'pa-IN'">
+        <xsl:text>LohitPunjabi,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'hi-IN'">
+        <xsl:text>LohitHindi,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'gu-IN'">
+        <xsl:text>LohitGujarati,</xsl:text>
+      </xsl:when>
+      <xsl:when test="$l10n.gentext.language = 'zh-TW'">
+        <xsl:text>ARPLMingti2LBig5,</xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:variable>
+  <xsl:choose>
+    <xsl:when test="$fop1.extensions != 0">
+      <xsl:copy-of select="$font"/><xsl:text>DejaVuLGCSans,monospace</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:copy-of select="$font"/><xsl:text>monospace</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:template>
 
 <!--xsl:param name="symbol.font.family">
-	<xsl:choose>
-		<xsl:when test="$l10n.gentext.language = 'ja-JP'">
-			<xsl:text>Symbol,ZapfDingbats</xsl:text>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:text>Symbol,ZapfDingbats</xsl:text>
-		</xsl:otherwise>
-	</xsl:choose>
+  <xsl:choose>
+    <xsl:when test="$l10n.gentext.language = 'ja-JP'">
+      <xsl:text>Symbol,ZapfDingbats</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>Symbol,ZapfDingbats</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
 </xsl:param-->
 
 <xsl:param name="title.font.family">
-	<xsl:call-template name="pickfont-sans"/>
+  <xsl:call-template name="pickfont-sans"/>
 </xsl:param>
 
 <xsl:param name="body.font.family">
-	<xsl:call-template name="pickfont-sans"/>
+  <xsl:call-template name="pickfont-sans"/>
 </xsl:param>
 
 <xsl:param name="monospace.font.family">
-	<xsl:call-template name="pickfont-mono"/>
+  <xsl:call-template name="pickfont-mono"/>
 </xsl:param>
 
 <xsl:param name="sans.font.family">
-	<xsl:call-template name="pickfont-sans"/>
+  <xsl:call-template name="pickfont-sans"/>
 </xsl:param>
 
 <!--xsl:param name="callout.unicode.font">
-	<xsl:call-template name="pickfont-sans"/>
+  <xsl:call-template name="pickfont-sans"/>
 </xsl:param-->
 
 <!--
@@ -829,34 +829,34 @@ Version: 1.72
 -->
 
 <xsl:template match="address">
-	<xsl:param name="suppress-numbers" select="'0'"/>
+  <xsl:param name="suppress-numbers" select="'0'"/>
 
-	<xsl:variable name="content">
-		<xsl:choose>
-			<xsl:when test="$suppress-numbers = '0'
-											and @linenumbering = 'numbered'
-											and $use.extensions != '0'
-											and $linenumbering.extension != '0'">
-				<xsl:call-template name="number.rtf.lines">
-					<xsl:with-param name="rtf">
-						<xsl:apply-templates/>
-					</xsl:with-param>
-				</xsl:call-template>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:apply-templates/>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:variable>
+  <xsl:variable name="content">
+    <xsl:choose>
+      <xsl:when test="$suppress-numbers = '0'
+                      and @linenumbering = 'numbered'
+                      and $use.extensions != '0'
+                      and $linenumbering.extension != '0'">
+        <xsl:call-template name="number.rtf.lines">
+          <xsl:with-param name="rtf">
+            <xsl:apply-templates/>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
 
-	<fo:block wrap-option='no-wrap'
-						white-space-collapse='false'
-			white-space-treatment='preserve'
-						linefeed-treatment="preserve"
-						text-align="start"
-						xsl:use-attribute-sets="verbatim.properties">
-		<xsl:copy-of select="$content"/>
-	</fo:block>
+  <fo:block wrap-option='no-wrap'
+            white-space-collapse='false'
+      white-space-treatment='preserve'
+            linefeed-treatment="preserve"
+            text-align="start"
+            xsl:use-attribute-sets="verbatim.properties">
+    <xsl:copy-of select="$content"/>
+  </fo:block>
 </xsl:template>
 
 <xsl:template name="component.title.nomarkup">
@@ -886,7 +886,7 @@ Version: 1.72
   <xsl:param name="sequence" select="''"/>
   <xsl:param name="position" select="''"/>
   <xsl:param name="gentext-key" select="''"/>
-	<xsl:param name="title-limit" select="'30'"/>
+  <xsl:param name="title-limit" select="'30'"/>
 <!--
   <fo:block>
     <xsl:value-of select="$pageclass"/>
@@ -903,73 +903,73 @@ body, blank, left, chapter
     <!-- position can be left, center, right -->
     <xsl:choose>
       <!--xsl:when test="($sequence='blank' and $position='left' and $gentext-key='chapter')">
-			<xsl:variable name="text">
-				<xsl:call-template name="component.title.nomarkup"/>
-			</xsl:variable>
-	      <fo:inline keep-together.within-line="always" font-weight="bold">
-  			  <xsl:choose>
-		  		<xsl:when test="string-length($text) &gt; '33'">
-					<xsl:value-of select="concat(substring($text, 0, $title-limit), '...')"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$text"/>
-				</xsl:otherwise>
-			  </xsl:choose>
-		  </fo:inline>
+      <xsl:variable name="text">
+        <xsl:call-template name="component.title.nomarkup"/>
+      </xsl:variable>
+        <fo:inline keep-together.within-line="always" font-weight="bold">
+          <xsl:choose>
+          <xsl:when test="string-length($text) &gt; '33'">
+          <xsl:value-of select="concat(substring($text, 0, $title-limit), '...')"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$text"/>
+        </xsl:otherwise>
+        </xsl:choose>
+      </fo:inline>
       </xsl:when-->
-	  <xsl:when test="$confidential = 1 and (($sequence='odd' and $position='left') or ($sequence='even' and $position='right'))">
-	      <fo:inline keep-together.within-line="always" font-weight="bold">
-			<xsl:text>RED HAT CONFIDENTIAL</xsl:text>
-		  </fo:inline>
+    <xsl:when test="$confidential = 1 and (($sequence='odd' and $position='left') or ($sequence='even' and $position='right'))">
+        <fo:inline keep-together.within-line="always" font-weight="bold">
+      <xsl:text>RED HAT CONFIDENTIAL</xsl:text>
+      </fo:inline>
       </xsl:when>
-	  <xsl:when test="$sequence = 'blank'">
+    <xsl:when test="$sequence = 'blank'">
         <!-- nothing -->
       </xsl:when>
- 	  <!-- Extracting 'Chapter' + Chapter Number from the full Chapter title, with a dirty, dirty hack -->
-  		<xsl:when test="($sequence='first' and $position='left' and $gentext-key='chapter')">
-		<xsl:variable name="text">
-			<xsl:call-template name="component.title.nomarkup"/>
-		</xsl:variable>
-		<xsl:variable name="chapt">
-			<xsl:value-of select="substring-before($text, '&#xA0;')"/>
-		</xsl:variable>
-		<xsl:variable name="remainder">
-			<xsl:value-of select="substring-after($text, '&#xA0;')"/>
-		</xsl:variable>
-		<xsl:variable name="chapt-num">
-			<xsl:value-of select="substring-before($remainder, '&#xA0;')"/>
-		</xsl:variable>
-		<xsl:variable name="text1">
-			<xsl:value-of select="concat($chapt, '&#xA0;', $chapt-num)"/>
-		</xsl:variable>
+     <!-- Extracting 'Chapter' + Chapter Number from the full Chapter title, with a dirty, dirty hack -->
+      <xsl:when test="($sequence='first' and $position='left' and $gentext-key='chapter')">
+    <xsl:variable name="text">
+      <xsl:call-template name="component.title.nomarkup"/>
+    </xsl:variable>
+    <xsl:variable name="chapt">
+      <xsl:value-of select="substring-before($text, '&#xA0;')"/>
+    </xsl:variable>
+    <xsl:variable name="remainder">
+      <xsl:value-of select="substring-after($text, '&#xA0;')"/>
+    </xsl:variable>
+    <xsl:variable name="chapt-num">
+      <xsl:value-of select="substring-before($remainder, '&#xA0;')"/>
+    </xsl:variable>
+    <xsl:variable name="text1">
+      <xsl:value-of select="concat($chapt, '&#xA0;', $chapt-num)"/>
+    </xsl:variable>
         <fo:inline keep-together.within-line="always" font-weight="bold">
- 		  <xsl:value-of select="$text1"/>
-		</fo:inline>
+       <xsl:value-of select="$text1"/>
+    </fo:inline>
       </xsl:when>
      <!--xsl:when test="($sequence='odd' or $sequence='even') and $position='center'"-->
       <xsl:when test="($sequence='even' and $position='left')">
         <!--xsl:if test="$pageclass != 'titlepage'"-->
-			<xsl:variable name="text">
-				<xsl:call-template name="component.title.nomarkup"/>
-			</xsl:variable>
-	      <fo:inline keep-together.within-line="always" font-weight="bold">
-  			  <xsl:choose>
-		  		<xsl:when test="string-length($text) &gt; '33'">
-					<xsl:value-of select="concat(substring($text, 0, $title-limit), '...')"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$text"/>
-				</xsl:otherwise>
-			  </xsl:choose>
-		  </fo:inline>
+      <xsl:variable name="text">
+        <xsl:call-template name="component.title.nomarkup"/>
+      </xsl:variable>
+        <fo:inline keep-together.within-line="always" font-weight="bold">
+          <xsl:choose>
+          <xsl:when test="string-length($text) &gt; '33'">
+          <xsl:value-of select="concat(substring($text, 0, $title-limit), '...')"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$text"/>
+        </xsl:otherwise>
+        </xsl:choose>
+      </fo:inline>
         <!--xsl:if-->
       </xsl:when>
       <xsl:when test="($sequence='odd' and $position='right')">
         <!--xsl:if test="$pageclass != 'titlepage'"-->
-	      <fo:inline keep-together.within-line="always"><fo:retrieve-marker retrieve-class-name="section.head.marker" retrieve-position="first-including-carryover" retrieve-boundary="page-sequence"/></fo:inline>
+        <fo:inline keep-together.within-line="always"><fo:retrieve-marker retrieve-class-name="section.head.marker" retrieve-position="first-including-carryover" retrieve-boundary="page-sequence"/></fo:inline>
         <!--/xsl:if-->
       </xsl:when>
-	  <xsl:when test="$position='left'">
+    <xsl:when test="$position='left'">
         <!-- Same for odd, even, empty, and blank sequences -->
         <xsl:call-template name="draft.text"/>
       </xsl:when>
@@ -995,15 +995,15 @@ Reason: Override colour
 Version: 1.72
 -->
 <xsl:template name="head.sep.rule">
-	<xsl:param name="pageclass"/>
-	<xsl:param name="sequence"/>
-	<xsl:param name="gentext-key"/>
+  <xsl:param name="pageclass"/>
+  <xsl:param name="sequence"/>
+  <xsl:param name="gentext-key"/>
 
-	<xsl:if test="$header.rule != 0">
-		<xsl:attribute name="border-bottom-width">0.5pt</xsl:attribute>
-		<xsl:attribute name="border-bottom-style">solid</xsl:attribute>
-		<xsl:attribute name="border-bottom-color">#4a5d75</xsl:attribute>
-	</xsl:if>
+  <xsl:if test="$header.rule != 0">
+    <xsl:attribute name="border-bottom-width">0.5pt</xsl:attribute>
+    <xsl:attribute name="border-bottom-style">solid</xsl:attribute>
+    <xsl:attribute name="border-bottom-color">#4a5d75</xsl:attribute>
+  </xsl:if>
 </xsl:template>
 
 <!--
@@ -1012,62 +1012,62 @@ Reason: Override colour
 Version: 1.72
 -->
 <xsl:template name="foot.sep.rule">
-	<xsl:param name="pageclass"/>
-	<xsl:param name="sequence"/>
-	<xsl:param name="gentext-key"/>
+  <xsl:param name="pageclass"/>
+  <xsl:param name="sequence"/>
+  <xsl:param name="gentext-key"/>
 
-	<xsl:if test="$footer.rule != 0">
-		<xsl:attribute name="border-top-width">0.5pt</xsl:attribute>
-		<xsl:attribute name="border-top-style">solid</xsl:attribute>
-		<xsl:attribute name="border-top-color">#4a5d75</xsl:attribute>
-	</xsl:if>
+  <xsl:if test="$footer.rule != 0">
+    <xsl:attribute name="border-top-width">0.5pt</xsl:attribute>
+    <xsl:attribute name="border-top-style">solid</xsl:attribute>
+    <xsl:attribute name="border-top-color">#4a5d75</xsl:attribute>
+  </xsl:if>
 </xsl:template>
 
 <xsl:param name="footnote.font.size">
-	<xsl:value-of select="$body.font.master * 0.8"/><xsl:text>pt</xsl:text>
+  <xsl:value-of select="$body.font.master * 0.8"/><xsl:text>pt</xsl:text>
 </xsl:param>
 <xsl:param name="footnote.number.format" select="'1'"/>
 <xsl:param name="footnote.number.symbols" select="''"/>
 <xsl:attribute-set name="footnote.mark.properties">
-	<xsl:attribute name="font-size">75%</xsl:attribute>
-	<xsl:attribute name="font-weight">normal</xsl:attribute>
-	<xsl:attribute name="font-style">normal</xsl:attribute>
+  <xsl:attribute name="font-size">75%</xsl:attribute>
+  <xsl:attribute name="font-weight">normal</xsl:attribute>
+  <xsl:attribute name="font-style">normal</xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="footnote.properties">
-	<xsl:attribute name="padding-top">48pt</xsl:attribute>
-	<xsl:attribute name="font-family"><xsl:value-of select="$body.fontset"/></xsl:attribute>
-	<xsl:attribute name="font-size"><xsl:value-of select="$footnote.font.size"/></xsl:attribute>
-	<xsl:attribute name="font-weight">normal</xsl:attribute>
-	<xsl:attribute name="font-style">normal</xsl:attribute>
-	<xsl:attribute name="text-align"><xsl:value-of select="$alignment"/></xsl:attribute>
-	<xsl:attribute name="start-indent">0pt</xsl:attribute>
+  <xsl:attribute name="padding-top">48pt</xsl:attribute>
+  <xsl:attribute name="font-family"><xsl:value-of select="$body.fontset"/></xsl:attribute>
+  <xsl:attribute name="font-size"><xsl:value-of select="$footnote.font.size"/></xsl:attribute>
+  <xsl:attribute name="font-weight">normal</xsl:attribute>
+  <xsl:attribute name="font-style">normal</xsl:attribute>
+  <xsl:attribute name="text-align"><xsl:value-of select="$alignment"/></xsl:attribute>
+  <xsl:attribute name="start-indent">0pt</xsl:attribute>
 </xsl:attribute-set>
 <xsl:attribute-set name="footnote.sep.leader.properties">
-	<xsl:attribute name="color">black</xsl:attribute>
-	<xsl:attribute name="leader-pattern">rule</xsl:attribute>
-	<xsl:attribute name="leader-length">1in</xsl:attribute>
+  <xsl:attribute name="color">black</xsl:attribute>
+  <xsl:attribute name="leader-pattern">rule</xsl:attribute>
+  <xsl:attribute name="leader-length">1in</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:template match="author" mode="tablerow.titlepage.mode">
   <fo:table-row>
     <fo:table-cell>
-	  <fo:block>
+    <fo:block>
         <xsl:call-template name="gentext">
           <xsl:with-param name="key" select="'Author'"/>
         </xsl:call-template>
-	  </fo:block>
+    </fo:block>
     </fo:table-cell>
     <fo:table-cell>
-	  <fo:block>
-	    <xsl:call-template name="person.name">
+    <fo:block>
+      <xsl:call-template name="person.name">
           <xsl:with-param name="node" select="."/>
         </xsl:call-template>
-	  </fo:block>
+    </fo:block>
     </fo:table-cell>
     <fo:table-cell>
-	  <fo:block>
-	    <xsl:apply-templates select="email"/>
-	  </fo:block>
+    <fo:block>
+      <xsl:apply-templates select="email"/>
+    </fo:block>
     </fo:table-cell>
   </fo:table-row>
 </xsl:template>
@@ -1085,23 +1085,23 @@ Version: 1.72
 <xsl:template match="editor" mode="tablerow.titlepage.mode">
   <fo:table-row>
     <fo:table-cell>
-	  <fo:block>
-	    <xsl:call-template name="gentext">
-	      <xsl:with-param name="key" select="'Editor'"/>
-	    </xsl:call-template>
-	  </fo:block>
+    <fo:block>
+      <xsl:call-template name="gentext">
+        <xsl:with-param name="key" select="'Editor'"/>
+      </xsl:call-template>
+    </fo:block>
     </fo:table-cell>
     <fo:table-cell>
-	  <fo:block>
+    <fo:block>
         <xsl:call-template name="person.name">
           <xsl:with-param name="node" select="."/>
         </xsl:call-template>
-	  </fo:block>
+    </fo:block>
     </fo:table-cell>
     <fo:table-cell>
-	  <fo:block>
-	    <xsl:apply-templates select="email"/>
-	  </fo:block>
+    <fo:block>
+      <xsl:apply-templates select="email"/>
+    </fo:block>
     </fo:table-cell>
   </fo:table-row>
 </xsl:template>
@@ -1109,23 +1109,23 @@ Version: 1.72
 <xsl:template match="othercredit" mode="tablerow.titlepage.mode">
   <fo:table-row>
     <fo:table-cell>
-	  <fo:block>
-	    <xsl:call-template name="gentext">
-	      <xsl:with-param name="key" select="'translator'"/>
-	    </xsl:call-template>
-	  </fo:block>
+    <fo:block>
+      <xsl:call-template name="gentext">
+        <xsl:with-param name="key" select="'translator'"/>
+      </xsl:call-template>
+    </fo:block>
     </fo:table-cell>
     <fo:table-cell>
-	  <fo:block>
+    <fo:block>
         <xsl:call-template name="person.name">
           <xsl:with-param name="node" select="."/>
         </xsl:call-template>
-	  </fo:block>
+    </fo:block>
     </fo:table-cell>
     <fo:table-cell>
-	  <fo:block>
-	    <xsl:apply-templates select="email"/>
-	  </fo:block>
+    <fo:block>
+      <xsl:apply-templates select="email"/>
+    </fo:block>
     </fo:table-cell>
   </fo:table-row>
  </xsl:template>
@@ -1221,16 +1221,16 @@ Version:1.72
   <fo:block xsl:use-attribute-sets="book.titlepage.recto.style" color="black">
     <xsl:call-template name="gentext">
       <xsl:with-param name="key" select="'isbn'"/>
-	</xsl:call-template>
-	<xsl:text>: </xsl:text>
+  </xsl:call-template>
+  <xsl:text>: </xsl:text>
     <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="bookinfo/isbn"/>
     <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="info/isbn"/>
   </fo:block>
   <fo:block xsl:use-attribute-sets="book.titlepage.recto.style" color="black"> 
     <xsl:call-template name="gentext">
       <xsl:with-param name="key" select="'pubdate'"/>
-	</xsl:call-template>
-	<xsl:text>: </xsl:text>
+  </xsl:call-template>
+  <xsl:text>: </xsl:text>
     <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="bookinfo/pubdate"/>
     <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="info/pubdate"/>
   </fo:block>

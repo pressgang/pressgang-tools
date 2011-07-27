@@ -21,33 +21,33 @@ Reason: Needed to add JBoss.org and Community Documentation graphics to header
 Version: 1.72.0
 -->
 <xsl:template name="book.titlepage.recto">
-				<p xmlns="http://www.w3.org/1999/xhtml">
-					<xsl:attribute name="id">
-						<xsl:text>title</xsl:text>
-					</xsl:attribute>
-					<a>
-						<xsl:attribute name="href">
-							<xsl:value-of select="$siteHref" />
-						</xsl:attribute>
-						<xsl:attribute name="class">
-							<xsl:text>site_href</xsl:text>
-						</xsl:attribute>
-						<strong>
-						        <xsl:value-of select="$siteLinkText"/>	
-						</strong>
-					</a>
-					<a>
-						<xsl:attribute name="href">
-							<xsl:value-of select="$docHref" />
-						</xsl:attribute>
-						<xsl:attribute name="class">
-							<xsl:text>doc_href</xsl:text>
-						</xsl:attribute>
-						<strong>
-						        <xsl:value-of select="$docLinkText"/>	
-						</strong>
-					</a>
-				</p>
+        <p xmlns="http://www.w3.org/1999/xhtml">
+          <xsl:attribute name="id">
+            <xsl:text>title</xsl:text>
+          </xsl:attribute>
+          <a>
+            <xsl:attribute name="href">
+              <xsl:value-of select="$siteHref" />
+            </xsl:attribute>
+            <xsl:attribute name="class">
+              <xsl:text>site_href</xsl:text>
+            </xsl:attribute>
+            <strong>
+                    <xsl:value-of select="$siteLinkText"/>
+            </strong>
+          </a>
+          <a>
+            <xsl:attribute name="href">
+              <xsl:value-of select="$docHref" />
+            </xsl:attribute>
+            <xsl:attribute name="class">
+              <xsl:text>doc_href</xsl:text>
+            </xsl:attribute>
+            <strong>
+                    <xsl:value-of select="$docLinkText"/>
+            </strong>
+          </a>
+        </p>
   <xsl:choose>
     <xsl:when test="d:bookinfo/d:title">
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode" select="d:bookinfo/d:title"/>
