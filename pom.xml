@@ -17,6 +17,13 @@
     <url>http://www.jboss.org</url>
   </organization>
 
+  <licenses>
+    <license>
+      <name>lgpl</name>
+      <url>http://repository.jboss.org/licenses/lgpl-2.1.txt</url>
+    </license>
+  </licenses>
+
   <scm>
     <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</connection>
     <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</developerConnection>
