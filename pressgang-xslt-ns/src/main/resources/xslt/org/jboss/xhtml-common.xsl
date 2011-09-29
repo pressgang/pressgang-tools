@@ -395,6 +395,7 @@ Version: 1.72.0
   </xsl:if>
 
   <meta xmlns="http://www.w3.org/1999/xhtml" name="generator" content="DocBook {$DistroTitle} V{$VERSION}"/>
+  <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
   <xsl:if test="$generate.meta.abstract != 0">
     <xsl:variable name="info" select="(d:articleinfo |d:bookinfo |d:prefaceinfo |d:chapterinfo |d:appendixinfo |d:sectioninfo |d:sect1info |d:sect2info |d:sect3info |d:sect4info |d:sect5info |d:referenceinfo |d:refentryinfo |d:partinfo |d:info |d:docinfo)[1]"/>
