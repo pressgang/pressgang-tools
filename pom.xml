@@ -27,7 +27,16 @@
   <scm>
     <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</connection>
     <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</developerConnection>
+    <url>https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</url>
   </scm>
+  <developers>
+    <developer>
+      <name>Jared Morgan</name>
+    </developer>
+    <developer>
+      <name>Geoffrey De Smet</name>
+    </developer>
+  </developers>
 
   <modules>
     <module>pressgang-highlight</module><!--highlighting packaged used for all XML and Java code samples-->
