@@ -25,9 +25,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</connection>
-    <developerConnection>scm:svn:https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</developerConnection>
-    <url>https://svn.jboss.org/repos/pressgang/pressgang-tools/trunk</url>
+    <connection>scm:git:git@github.com:pressgang/pressgang-tools.git</connection>
+    <developerConnection>scm:git:git@github.com:pressgang/pressgang-tools.git</developerConnection>
+    <url>https://github.com/pressgang/pressgang-tools</url>
   </scm>
   <developers>
     <developer>
