@@ -17,6 +17,8 @@
   </description>
 
   <dependencies>
+    <!-- TODO Sooner or later we have to upgrade to docbook-xsl 1.76.1 which does not use 2 different GAV jars.
+         It uses 1 zip GAV with classifiers (resoures and ns-resources) -->
     <dependency>
       <groupId>net.sf.docbook</groupId>
       <artifactId>docbook</artifactId>
