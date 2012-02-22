@@ -1,5 +1,4 @@
-<?xml version='1.0'?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <!--
     Copyright 2008 JBoss, a division of Red Hat
     License: GPL
