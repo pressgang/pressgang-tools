@@ -90,7 +90,7 @@ public class JavaXhtmlRenderer extends XhtmlRenderer
 		int previous_style = 0;
 		boolean newline = false;
 		
-		StringBuffer buf = new StringBuffer();
+		StringBuilder buf = new StringBuilder();
 		int c = 0;	 
 		while ((c = r.read()) != -1) {
 		  buf.append((char) c);
