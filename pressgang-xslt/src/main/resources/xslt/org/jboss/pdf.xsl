@@ -1343,25 +1343,27 @@
               font-size="14pt" space-before="15.552pt">
       <xsl:apply-templates mode="book.titlepage.recto.auto.mode"
                            select="bookinfo/releaseinfo"/>
+      <xsl:apply-templates mode="book.titlepage.recto.auto.mode"
+                           select="info/releaseinfo"/>
     </fo:block>
 
     <fo:block text-align="center" space-before="15.552pt">
       <xsl:call-template name="person.name.list">
-        <xsl:with-param name="person.list" select="bookinfo/authorgroup/author|bookinfo/authorgroup/corpauthor"/>
+        <xsl:with-param name="person.list" select="bookinfo/authorgroup/author|bookinfo/authorgroup/corpauthor|info/authorgroup/author"/>
         <xsl:with-param name="person.type" select="'author'"/>
       </xsl:call-template>
     </fo:block>
 
     <fo:block text-align="center" space-before="15.552pt">
       <xsl:call-template name="person.name.list">
-        <xsl:with-param name="person.list" select="bookinfo/authorgroup/editor"/>
+        <xsl:with-param name="person.list" select="bookinfo/authorgroup/editor|info/authorgroup/editor"/>
         <xsl:with-param name="person.type" select="'editor'"/>
       </xsl:call-template>
     </fo:block>
 
     <fo:block text-align="center" space-before="15.552pt">
       <xsl:call-template name="person.name.list">
-        <xsl:with-param name="person.list" select="bookinfo/authorgroup/othercredit"/>
+        <xsl:with-param name="person.list" select="bookinfo/authorgroup/othercredit|info/authorgroup/othercredit"/>
         <xsl:with-param name="person.type" select="'othercredit'"/>
       </xsl:call-template>
     </fo:block>
