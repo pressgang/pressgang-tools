@@ -1745,7 +1745,11 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- Change fo:external-graphic to do content-width="scale-down-to-fit" content-height="scale-down-to-fit" -->
+  <!--
+  From: fo/graphics.xsl
+  Reason: Scale PDF images down to fit the page (content-width="scale-down-to-fit" content-height="scale-down-to-fit").
+  Version: 1.74.0
+  -->
   <xsl:template name="process.image">
     <!-- When this template is called, the current node should be  -->
     <!-- a graphic, inlinegraphic, imagedata, or videodata. All    -->
