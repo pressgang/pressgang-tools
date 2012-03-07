@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.jboss.pressgang</groupId>
-    <artifactId>pressgang-tools</artifactId>
-    <version>2.0.3-SNAPSHOT</version>
-  </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.jboss.pressgang</groupId>
+        <artifactId>pressgang-tools</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+    </parent>
 
-  <artifactId>pressgang-xslt-ns</artifactId>
+    <artifactId>pressgang-xslt-ns</artifactId>
 
-  <name>JBoss Community DocBook XSLT namespaced (XSD variant)</name>
-  <description>
-    The main project to transform DocBook XML into XHTML and other formats for JBoss Community Documentation.
-    Use this with XSD based docbook XML files. Use jbossorg-docbook-xslt with DTD based XML files.
-  </description>
+    <name>JBoss Community DocBook XSLT namespaced (XSD variant)</name>
+    <description>
+        The main project to transform DocBook XML into XHTML and other formats for JBoss Community Documentation.
+        Use this with XSD based docbook XML files. As of 3.0.0 DTD based XML files (non namespaced) are no longer
+        supported.
+    </description>
 
-  <dependencies>
-    <!-- TODO Sooner or later we have to upgrade to docbook-xsl 1.76.1 which does not use 2 different GAV jars.
-         It uses 1 zip GAV with classifiers (resources and ns-resources) -->
-    <dependency>
-      <groupId>net.sf.docbook</groupId>
-      <artifactId>docbook-xsl-ns</artifactId>
-      <version>1.74.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jboss.pressgang</groupId>
-      <artifactId>pressgang-highlight</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.docbook</groupId>
+            <artifactId>docbook-xsl</artifactId>
+            <version>1.76.1</version>
+            <classifier>ns-resources</classifier>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.pressgang</groupId>
+            <artifactId>pressgang-highlight</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,165 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.jboss.pressgang</groupId>
-  <artifactId>pressgang-tools</artifactId>
-  <packaging>pom</packaging>
-  <version>2.0.3-SNAPSHOT</version>
-  
-  <name>Pressgang tools</name>
-  <description>Multiproject for all artifacts which support JBoss Community documentation.</description>
-  <url>http://www.jboss.org/pressgang/</url>
+    <groupId>org.jboss.pressgang</groupId>
+    <artifactId>pressgang-tools</artifactId>
+    <packaging>pom</packaging>
+    <version>3.0.0-SNAPSHOT</version>
 
-  <organization>
-    <name>JBoss.org</name>
-    <url>http://www.jboss.org</url>
-  </organization>
+    <name>Pressgang tools</name>
+    <description>Multiproject for all artifacts which support JBoss Community documentation.</description>
+    <url>http://www.jboss.org/pressgang/</url>
 
-  <licenses>
-    <license>
-      <name>lgpl</name>
-      <url>http://repository.jboss.org/licenses/lgpl-2.1.txt</url>
-    </license>
-  </licenses>
+    <organization>
+        <name>JBoss.org</name>
+        <url>http://www.jboss.org</url>
+    </organization>
 
-  <scm>
-    <connection>scm:git:git@github.com:pressgang/pressgang-tools.git</connection>
-    <developerConnection>scm:git:git@github.com:pressgang/pressgang-tools.git</developerConnection>
-    <url>https://github.com/pressgang/pressgang-tools</url>
-  </scm>
-  <developers>
-    <developer>
-      <name>Jared Morgan</name>
-    </developer>
-    <developer>
-      <name>Geoffrey De Smet</name>
-    </developer>
-  </developers>
+    <licenses>
+        <license>
+            <name>lgpl</name>
+            <url>http://repository.jboss.org/licenses/lgpl-2.1.txt</url>
+        </license>
+    </licenses>
 
-  <modules>
-    <module>pressgang-highlight</module><!--highlighting packaged used for all XML and Java code samples-->
-    <module>pressgang-fonts</module><!--base fonts used in the jbossorg styles-->
-    <module>pressgang-xslt</module><!-- non-namespaced (DTD variant) -->
-    <module>pressgang-xslt-ns</module><!-- namespaced (XSD variant) -->
-    <module>pressgang-jdocbook-style</module><!--primary style module used for jbossorg blue and grey styles-->
-  </modules>
+    <scm>
+        <connection>scm:git:git@github.com:pressgang/pressgang-tools.git</connection>
+        <developerConnection>scm:git:git@github.com:pressgang/pressgang-tools.git</developerConnection>
+        <url>https://github.com/pressgang/pressgang-tools</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Jared Morgan</name>
+        </developer>
+        <developer>
+            <name>Geoffrey De Smet</name>
+        </developer>
+        <developer>
+            <id>sebersole</id>
+            <name>Steve Ebersole</name>
+        </developer>
+    </developers>
 
-  <repositories>
-    <!-- Conventions are described in http://community.jboss.org/wiki/MavenGettingStarted-Developers -->
-    <repository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Repository Group</name>
-      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>daily</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Repository Group</name>
-      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+    <modules>
+        <module>pressgang-highlight</module>        <!--highlighting packaged used for all XML and Java code samples-->
+        <module>pressgang-fonts</module>            <!--base fonts used in the jbossorg styles-->
+        <module>pressgang-xslt-ns</module>          <!-- namespaced (XSD variant) -->
+        <module>pressgang-jdocbook-style</module>   <!--primary style module used for jbossorg blue and grey styles-->
+    </modules>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>1.0</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>enforce</goal>
-              </goals>
-              <inherited>true</inherited>
-              <configuration>
-                <rules>
-                  <requireJavaVersion>
-                    <version>[1.6.0,)</version>
-                  </requireJavaVersion>
-                  <requireMavenVersion>
-                    <version>[3.0.3,)</version>
-                  </requireMavenVersion>
-                </rules>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>2.1.2</version>
-          <executions>
-            <execution>
-              <goals>
-                <goal>jar</goal>
-                <goal>test-jar</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <plugins>
-      <plugin>
-        <groupId>org.jboss.maven.plugins</groupId>
-        <artifactId>maven-jdocbook-style-plugin</artifactId>
-        <version>2.0.0</version>
-        <extensions>true</extensions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-enforcer-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <!-- Entry needed to create, install and deploy sources jars -->
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.0</version>
-        <configuration>
-          <tagBase>https://svn.jboss.org/repos/pressgang/pressgang-tools/tags</tagBase>
-        </configuration>
-      </plugin>
-    </plugins>
+    <repositories>
+        <!-- Conventions are described in http://community.jboss.org/wiki/MavenGettingStarted-Developers -->
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav</artifactId>
-        <version>1.0-beta-2</version>
-      </extension>
-    </extensions>
-  </build>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>1.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>enforce</goal>
+                            </goals>
+                            <inherited>true</inherited>
+                            <configuration>
+                                <rules>
+                                    <requireJavaVersion>
+                                        <version>[1.6.0,)</version>
+                                    </requireJavaVersion>
+                                    <requireMavenVersion>
+                                        <version>[3.0.3,)</version>
+                                    </requireMavenVersion>
+                                </rules>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>jar</goal>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.jboss.maven.plugins</groupId>
+                <artifactId>maven-jdocbook-style-plugin</artifactId>
+                <version>2.0.0</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <!-- Entry needed to create, install and deploy sources jars -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <tagBase>https://svn.jboss.org/repos/pressgang/pressgang-tools/tags</tagBase>
+                </configuration>
+            </plugin>
+        </plugins>
 
-  <distributionManagement>
-    <repository>
-      <id>jboss-releases-repository</id>
-      <name>JBoss Releases Repository</name>
-      <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>jboss-snapshots-repository</id>
-      <name>JBoss Snapshots Repository</name>
-      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav</artifactId>
+                <version>1.0-beta-2</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>jboss-releases-repository</id>
+            <name>JBoss Releases Repository</name>
+            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>jboss-snapshots-repository</id>
+            <name>JBoss Snapshots Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
