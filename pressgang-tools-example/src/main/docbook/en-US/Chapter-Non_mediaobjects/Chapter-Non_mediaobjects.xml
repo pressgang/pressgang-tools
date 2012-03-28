@@ -8,7 +8,7 @@
   <title>Non media objects</title>
 
   <section>
-    <title>para</title>
+    <title>Using the para element</title>
 
     <para>Para 1</para>
 
@@ -22,7 +22,51 @@
   </section>
 
   <section>
-    <title>itemizedlist</title>
+    <title>Special chars</title>
+
+    <para>Financial: dollar ($), euro (€), pound (£)</para>
+
+    <para>XML escapes: lower then (&lt;), greater then (&gt;), ampersand (&amp;), double quotes ("), non breaking space (&#160;)</para>
+
+    <para>Java escapes: backslash (\)</para>
+
+    <para>Hello world translations: Russian (привет мир), Chinese (你好世界), Swedish (hallå världen), Arabic (مرحبا العالم), Hindi (नमस्ते दुनिया)</para>
+  </section>
+
+  <section>
+    <title>Using the section element</title>
+
+    <section>
+      <title>Subsection 1</title>
+
+      <section>
+        <title>Subsection 1.1</title>
+
+        <para>Para</para>
+      </section>
+
+      <section>
+        <title>Subsection 1.2</title>
+
+        <para>Para with subsection below</para>
+
+        <section>
+          <title>Subsection 1.2.1</title>
+
+          <para>Para</para>
+        </section>
+
+        <section>
+          <title>Subsection 1.2.2</title>
+
+          <para>Para</para>
+        </section>
+      </section>
+    </section>
+  </section>
+
+  <section>
+    <title>Using the itemizedlist element</title>
 
     <para>Simple itemizedlist:</para>
 
@@ -71,7 +115,7 @@
   </section>
 
   <section>
-    <title>programlisting</title>
+    <title>Using the programlisting element</title>
 
     <para>First Java:</para>
 
