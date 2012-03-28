@@ -145,7 +145,7 @@
     <xsl:param name="double.sided">1</xsl:param>
     <xsl:param name="headers.on.blank.pages">1</xsl:param>
     <xsl:param name="footers.on.blank.pages">1</xsl:param>
-    <xsl:param name="header.column.widths" select="'1 0 1'"/>
+    <!--<xsl:param name="header.column.widths" select="'1 0 1'"/>-->
     <xsl:param name="footer.column.widths" select="'1 1 1'"/>
     <xsl:param name="header.rule" select="1"/>
     <xsl:param name="page.margin.top">15mm</xsl:param>
