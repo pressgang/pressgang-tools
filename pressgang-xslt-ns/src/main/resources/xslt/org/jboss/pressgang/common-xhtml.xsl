@@ -42,6 +42,22 @@
     <xsl:param name="ulink.target"/>
     <xsl:param name="table.cell.border.style"/>
 
+    <!-- TOC: remove list of figures, list of tables, ... Only keep Table of Contents -->
+    <xsl:param name="generate.toc">
+        set toc
+        book toc
+        article toc
+        chapter toc
+        qandadiv toc
+        qandaset toc
+        sect1 nop
+        sect2 nop
+        sect3 nop
+        sect4 nop
+        sect5 nop
+        section toc
+        part toc
+    </xsl:param>
 
     <!-- TEMPLATES -->
     <xsl:output method="xml"
