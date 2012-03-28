@@ -17,13 +17,12 @@
     <cover>
       <mediaobject>
         <imageobject>
-          <!-- TODO This does not show up -->
+          <!-- TODO This does not show up because by cover != title page and it's ignored by default -->
           <imagedata fileref="images/pressgangLogo.png" />
         </imageobject>
       </mediaobject>
     </cover>
   </info>
-
 
   <xi:include href="Chapter-Non_mediaobjects/Chapter-Non_mediaobjects.xml" />
   <xi:include href="Chapter-Mediaobjects/Chapter-Mediaobjects.xml" />
