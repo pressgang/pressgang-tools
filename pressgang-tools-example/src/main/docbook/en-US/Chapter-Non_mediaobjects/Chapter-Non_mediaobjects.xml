@@ -24,7 +24,7 @@
   <section>
     <title>itemizedlist</title>
 
-    <para>Before para</para>
+    <para>Simple itemizedlist:</para>
 
     <itemizedlist>
       <listitem>
@@ -34,7 +34,40 @@
         <para>listitem 2</para>
       </listitem>
     </itemizedlist>
-    <para>After para</para>
+
+    <para>Nested itemizedlist:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>listitem 1</para>
+        <itemizedlist>
+          <listitem>
+            <para>listitem 1.1</para>
+          </listitem>
+          <listitem>
+            <para>listitem 1.2</para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>listitem 2</para>
+        <itemizedlist>
+          <listitem>
+            <para>listitem 2.1</para>
+            <itemizedlist>
+              <listitem>
+                <para>listitem 2.1.1</para>
+                <itemizedlist>
+                  <listitem>
+                    <para>listitem 2.1.1.1</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+    </itemizedlist>
   </section>
 
   <section>
@@ -70,5 +103,23 @@
     &lt;element attribute="value2"&gt;text2&lt;/element&gt;
     &lt;element/&gt;
 &lt;/root&gt;</programlisting>
+
+    <para>In itemizedlist:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>listitem 1</para>
+        <programlisting language="java">public class HelloWorld {
+
+    public static void main(String[] args) {...}
+
+}</programlisting>
+      </listitem>
+      <listitem>
+        <para>listitem 2</para>
+      </listitem>
+    </itemizedlist>
   </section>
+
+  <!-- TODO note, warning, ... -->
 </chapter>
