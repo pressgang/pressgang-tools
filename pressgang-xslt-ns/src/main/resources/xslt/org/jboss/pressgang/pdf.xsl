@@ -96,7 +96,6 @@
 
         <xsl:copy-of select="$font"/>
         <xsl:text>Liberation Sans,sans-serif</xsl:text>
-
     </xsl:template>
 
     <xsl:template name="pickfont-mono">
@@ -106,7 +105,6 @@
 
         <xsl:copy-of select="$font"/>
         <xsl:text>Liberation Mono,monospace</xsl:text>
-
     </xsl:template>
 
     <xsl:param name="title.font.family">
@@ -142,12 +140,8 @@
         ###########################################################################################
     -->
     <xsl:param name="paper.type" select="'A4'"/>
-    <xsl:param name="double.sided">1</xsl:param>
     <xsl:param name="headers.on.blank.pages">1</xsl:param>
     <xsl:param name="footers.on.blank.pages">1</xsl:param>
-    <!--<xsl:param name="header.column.widths" select="'1 0 1'"/>-->
-    <xsl:param name="footer.column.widths" select="'1 1 1'"/>
-    <xsl:param name="header.rule" select="1"/>
     <xsl:param name="page.margin.top">15mm</xsl:param>
     <xsl:param name="region.before.extent">10mm</xsl:param>
     <xsl:param name="body.margin.top">15mm</xsl:param>
