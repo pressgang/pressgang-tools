@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter version="5.0"
+         xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd http://www.w3.org/1999/xlink http://www.docbook.org/xml/5.0/xsd/xlink.xsd"
+         xml:base="../" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:ns="http://docbook.org/ns/docbook">
+  <title>Non media objects</title>
+
+  <section>
+    <title>para</title>
+
+    <para>Para 1</para>
+
+    <para>
+      Para 2 is long because it repeats itself. Para 2 is long because it repeats itself.
+      Para 2 is long because it repeats itself. Para 2 is long because it repeats itself.
+      Para 2 is long because it repeats itself. Para 2 is long because it repeats itself.
+      Para 2 is long because it repeats itself. Para 2 is long because it repeats itself.
+      Para 2 is long because it repeats itself. Para 2 is long because it repeats itself.
+    </para>
+  </section>
+
+  <section>
+    <title>itemizedlist</title>
+
+    <para>Before para</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>listitem 1</para>
+      </listitem>
+      <listitem>
+        <para>listitem 2</para>
+      </listitem>
+    </itemizedlist>
+    <para>After para</para>
+  </section>
+
+  <section>
+    <title>programlisting</title>
+
+    <para>First Java:</para>
+
+    <programlisting language="java">public class HelloWorld {
+
+  public static void main(String[] args) {
+      // This is a comment
+      HelloWorld w = new HelloWorld();
+      w.say();
+  }
+
+  private String greeting = "Hello";
+
+  public void say() {
+      System.out.println(greeting + ", world!");
+  }
+
+  ...
+
+}</programlisting>
+
+    <para>Then XML:</para>
+
+    <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+    &lt;element attribute="value1"&gt;
+      text1
+    &lt;/element&gt;
+    &lt;element attribute="value2"&gt;text2&lt;/element&gt;
+    &lt;element/&gt;
+&lt;/root&gt;</programlisting>
+  </section>
+</chapter>
