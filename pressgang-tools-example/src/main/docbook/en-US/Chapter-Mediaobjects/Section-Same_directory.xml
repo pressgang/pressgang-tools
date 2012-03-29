@@ -29,7 +29,7 @@
 
   <mediaobject>
     <imageobject>
-      <imagedata fileref="Chapter-Mediaobjects/png_image_1000_200.png"></imagedata>
+      <imagedata fileref="Chapter-Mediaobjects/png_image_2000_200.png"></imagedata>
     </imageobject>
   </mediaobject>
 
@@ -38,7 +38,7 @@
 
   <mediaobject>
     <imageobject>
-      <imagedata fileref="Chapter-Mediaobjects/svg_image_1000_200.svg"></imagedata>
+      <imagedata fileref="Chapter-Mediaobjects/svg_image_2000_200.svg"></imagedata>
     </imageobject>
   </mediaobject>
   -->
