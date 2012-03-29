@@ -46,7 +46,11 @@
             <imageResource>
               <directory>${basedir}/src/main/docbook/en-US</directory>
               <includes>
-                <include>images/</include>
+                <include>**/*.svg</include>
+                <include>**/*.png</include>
+                <include>**/*.jpg</include>
+                <include>**/*.gif</include>
+                <include>**/*.bmp</include>
               </includes>
             </imageResource>
             <formats>
@@ -54,24 +58,17 @@
                 <formatName>html_single</formatName>
                 <stylesheetResource>classpath:/xslt/org/jboss/pressgang/xhtml-single.xsl</stylesheetResource>
                 <finalName>index.html</finalName>
-                <!-- <profilingTypeName>two_pass</profilingTypeName> -->
               </format>
               <format>
                 <formatName>html</formatName>
                 <stylesheetResource>classpath:/xslt/org/jboss/pressgang/xhtml.xsl</stylesheetResource>
                 <finalName>index.html</finalName>
-                <!-- <profilingTypeName>two_pass</profilingTypeName> -->
               </format>
               <format>
                 <formatName>pdf</formatName>
                 <stylesheetResource>classpath:/xslt/org/jboss/pressgang/pdf.xsl</stylesheetResource>
                 <finalName>${project.artifactId}.pdf</finalName>
               </format>
-              <!--<format>-->
-              <!--<formatName>eclipse</formatName>-->
-              <!--<stylesheetResource>classpath:/xslt/org/jboss/pressgang/eclipse.xsl</stylesheetResource>-->
-              <!--<finalName>${project.artifactId}.html</finalName>-->
-              <!--</format>-->
             </formats>
             <injections>
               <injection>
