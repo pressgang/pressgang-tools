@@ -165,5 +165,49 @@
     </itemizedlist>
   </section>
 
-  <!-- TODO note, warning, ... -->
+  <section>
+    <title>Note, warning and important</title>
+
+    <note>
+      <para>This is a note</para>
+    </note>
+
+    <warning>
+      <para>This is a warning</para>
+    </warning>
+
+    <important>
+      <para>This is an important</para>
+    </important>
+
+    <warning>
+      <para>This is a warning with a programlisting</para>
+      <programlisting language="java">public class HelloWorld {
+
+        public static void main(String[] args) {...}
+
+}</programlisting>
+    </warning>
+
+    <important>
+      <para>This is an important with an itemizedlist</para>
+      <itemizedlist>
+        <listitem>
+          <para>listitem 1</para>
+          <itemizedlist>
+            <listitem>
+              <para>listitem 1.1</para>
+            </listitem>
+            <listitem>
+              <para>listitem 1.2</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>listitem 2</para>
+        </listitem>
+      </itemizedlist>
+    </important>
+  </section>
+
 </chapter>
