@@ -226,7 +226,9 @@ IntelliJ has very good build-in support for Maven.
 
 * Open IntelliJ.
 
-* Click menu *File*, menu item *New project*.
+* Import the pressgang-tools module
+
+    * Click menu *File*, menu item *Import Module*.
 
     * Click radiobutton *Create project from scratch*, button *Next*
 
@@ -237,16 +239,24 @@ IntelliJ has very good build-in support for Maven.
     * Checkbox *Create module*: `off`
 
 * Click menu *File*, menu item *New module*
+    
+* Click the pressgang-tools git repo root (where the pom.xml file resides) and click OK.
 
-    * Radiobutton *Import from external model*, button *Next*, button *Next*
+* Select *Import from external model* radio button, select Maven, and then click Next.
 
-    * Textfield *Root directory*: `~/projects/pressgang-tools`
+* In the Import Module screen, make the following changes
+
+    * Textfield *Root directory*: `~/projects/pressgang-tools` (or where you cloned the pressgang-tools GIT repo)
 
         * That is the directory that contains the multiproject `pom.xml` file from a project base directory.
 
-    * Button *Next*, button *Next*, button *Finish*.
+* Verify the maven projects to import (there should be one called org.jboss.pressgang:pressgang-tools[VERSION]) and click Next.
 
-    * Go grab a coffee while it's indexing.
+* Click Next to move past the SDK screen.
+
+* Click *Finish*.
+
+* Go grab a coffee while it's indexing.
 
 Configuring IntelliJ
 --------------------
