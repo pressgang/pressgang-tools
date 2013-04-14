@@ -8,7 +8,6 @@
     <!-- IMPORTS -->
     <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.76.1/fo/docbook.xsl"/>
 
-
     <!-- INCLUDES -->
     <xsl:include href="common-base.xsl"/>
 
@@ -250,9 +249,36 @@
         ###########################################################################################
     -->
     <xsl:param name="generate.toc">
-        set toc
-        book toc
-        article toc
+        <xsl:choose>
+            <xsl:when test="$asciidoc.mode = 0">
+set toc
+book toc
+article toc
+            </xsl:when>
+            <xsl:when test="/processing-instruction('asciidoc-toc')">
+article toc,title
+book    toc,title,figure,table,example,equation
+                <xsl:if test="$generate.section.toc.level != 0">
+chapter   toc,title
+part      toc,title
+preface   toc,title
+qandadiv  toc
+qandaset  toc
+reference toc,title
+sect1     toc
+sect2     toc
+sect3     toc
+sect4     toc
+sect5     toc
+section   toc
+set       toc,title
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+article nop
+book    nop
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:param>
 
     <xsl:param name="toc.section.depth">2</xsl:param>
@@ -504,6 +530,7 @@
     <!-- scalefit for large images -->
     <xsl:param name="graphicsize.extension" select="'1'"/>
     <xsl:param name="default.image.width">17.4cm</xsl:param>
+    <xsl:param name="default.inline.image.height">1em</xsl:param>
 
     <!--
         From: fo/graphics.xsl
@@ -598,7 +625,7 @@
                             <xsl:with-param name="default.units" select="'px'"/>
                         </xsl:call-template>
                     </xsl:when>
-                    <xsl:when test="not(@depth) and $default.image.width != ''">
+                    <xsl:when test="not(@depth) and not(ancestor::inlinemediaobject) and $default.image.width != ''">
                         <xsl:call-template name="length-spec">
                             <xsl:with-param name="length" select="$default.image.width"/>
                             <xsl:with-param name="default.units" select="'px'"/>
@@ -617,6 +644,12 @@
                     <xsl:when test="@depth">
                         <xsl:call-template name="length-spec">
                             <xsl:with-param name="length" select="@depth"/>
+                            <xsl:with-param name="default.units" select="'px'"/>
+                        </xsl:call-template>
+                    </xsl:when>
+                    <xsl:when test="ancestor::inlinemediaobject">
+                        <xsl:call-template name="length-spec">
+                            <xsl:with-param name="length" select="$default.inline.image.height"/>
                             <xsl:with-param name="default.units" select="'px'"/>
                         </xsl:call-template>
                     </xsl:when>
@@ -1024,5 +1057,26 @@
         <xsl:attribute name="linefeed-treatment">preserve</xsl:attribute>
         <xsl:attribute name="text-align">start</xsl:attribute>
     </xsl:attribute-set>
+
+    <!--
+        AsciiDoc processing instruction handling
+    -->
+
+    <!-- Forced line break -->
+    <xsl:template match="processing-instruction('asciidoc-br')">
+        <fo:block/>
+    </xsl:template>
+
+    <!-- Forced page break -->
+    <xsl:template match="processing-instruction('asciidoc-pagebreak')">
+       <fo:block break-after="page"/>
+    </xsl:template>
+
+    <!-- Horizontal ruler -->
+    <xsl:template match="processing-instruction('asciidoc-hr')">
+        <fo:block space-after="1em">
+            <fo:leader leader-pattern="rule" rule-thickness="0.5pt" rule-style="solid" leader-length.minimum="100%"/>
+        </fo:block>
+    </xsl:template>
 
 </xsl:stylesheet>

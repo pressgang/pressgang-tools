@@ -45,19 +45,46 @@
 
     <!-- TOC: remove list of figures, list of tables, ... Only keep Table of Contents -->
     <xsl:param name="generate.toc">
-        set toc
-        book toc
-        article toc
-        chapter toc
-        qandadiv toc
-        qandaset toc
-        sect1 nop
-        sect2 nop
-        sect3 nop
-        sect4 nop
-        sect5 nop
-        section toc
-        part toc
+        <xsl:choose>
+            <xsl:when test="$asciidoc.mode = 0">
+set toc
+book toc
+article toc
+chapter toc
+qandadiv toc
+qandaset toc
+sect1 nop
+sect2 nop
+sect3 nop
+sect4 nop
+sect5 nop
+section toc
+part toc
+            </xsl:when>
+            <xsl:when test="/processing-instruction('asciidoc-toc')">
+article toc,title
+book    toc,title,figure,table,example,equation
+                <xsl:if test="$generate.section.toc.level != 0">
+chapter   toc,title
+part      toc,title
+preface   toc,title
+qandadiv  toc
+qandaset  toc
+reference toc,title
+sect1     toc
+sect2     toc
+sect3     toc
+sect4     toc
+sect5     toc
+section   toc
+set       toc,title
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+article nop
+book    nop
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:param>
 
     <!-- TEMPLATES -->
@@ -178,6 +205,21 @@
             </xsl:choose>
         </pre>
 
+    </xsl:template>
+
+    <!-- Forced line break -->
+    <xsl:template match="processing-instruction('asciidoc-br')">
+        <br/>
+    </xsl:template>
+
+    <!-- Forced page break -->
+    <xsl:template match="processing-instruction('asciidoc-pagebreak')">
+       <div class="page-break"/>
+    </xsl:template>
+
+    <!-- Horizontal ruler -->
+    <xsl:template match="processing-instruction('asciidoc-hr')">
+        <hr/>
     </xsl:template>
 
 </xsl:stylesheet>
