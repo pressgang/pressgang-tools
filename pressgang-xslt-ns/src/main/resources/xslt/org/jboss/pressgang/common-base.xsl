@@ -12,10 +12,24 @@
     -->
     <xsl:param name="confidential" select="0"/>
 
+    <xsl:param name="asciidoc.mode">0</xsl:param>
+
     <!--
         TOC
     -->
-    <xsl:param name="section.autolabel" select="1"/>
+    <xsl:param name="section.autolabel">
+        <xsl:choose>
+            <xsl:when test="$asciidoc.mode = 0">1</xsl:when>
+            <xsl:when test="/processing-instruction('asciidoc-numbered')">1</xsl:when>
+            <xsl:otherwise>0</xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
+    <xsl:param name="section.autolabel.max.depth">
+        <xsl:choose>
+            <xsl:when test="$asciidoc.mode = 0">8</xsl:when>
+            <xsl:otherwise>2</xsl:otherwise>
+        </xsl:choose>
+    </xsl:param>
     <xsl:param name="section.label.includes.component.label" select="1"/>
 
     <!--
