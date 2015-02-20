@@ -87,6 +87,8 @@ book    nop
         </xsl:choose>
     </xsl:param>
 
+    <xsl:param name="html.googleAnalyticsId" select="''"/>
+
     <!-- TEMPLATES -->
     <xsl:output method="xml"
                 encoding="UTF-8"
@@ -101,6 +103,31 @@ book    nop
     <xsl:template name="user.head.content">
         <xsl:param name="node" select="."/>
         <meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </xsl:template>
+
+    <!--
+        Comes from xhtml/docbook.xsl
+        Used to add google analytics script.
+    -->
+    <xsl:template name="user.footer.content">
+      <xsl:if test="$html.googleAnalyticsId != ''">
+        <xsl:element name="script" namespace="http://www.w3.org/1999/xhtml">
+          <xsl:attribute name="type">
+            <xsl:text>text/javascript</xsl:text>
+          </xsl:attribute>
+          <xsl:text>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', '</xsl:text>
+          <xsl:value-of select="$html.googleAnalyticsId"/>
+          <xsl:text>']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();</xsl:text>
+        </xsl:element>
+      </xsl:if>
     </xsl:template>
 
 

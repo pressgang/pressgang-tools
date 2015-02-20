@@ -82,6 +82,10 @@
               <xmlTransformerType>saxon</xmlTransformerType>
               <xincludeSupported>true</xincludeSupported>
               <useRelativeImageUris>true</useRelativeImageUris>
+              <!-- To use Google Analytics: -->
+              <!--<transformerParameters>-->
+                <!--<html.googleAnalyticsId>UA-XXXXXXX-X</html.googleAnalyticsId>-->
+              <!--</transformerParameters>-->
             </options>
           </configuration>
         </plugin>
