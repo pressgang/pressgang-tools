@@ -137,6 +137,8 @@
 
 }</programlisting>
 
+    <para>That class <literal>HelloWorld</literal> is a literal in this paragraph.</para>
+
     <para>Then XML:</para>
 
     <programlisting language="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -147,6 +149,12 @@
     &lt;element attribute="value2"&gt;text2&lt;/element&gt;
     &lt;element/&gt;
 &lt;/root&gt;</programlisting>
+
+    <para>Then a programlisting without a language set:</para>
+
+    <programlisting>INFO App starting
+INFO App running
+INFO App stopping</programlisting>
 
     <para>In itemizedlist:</para>
 
