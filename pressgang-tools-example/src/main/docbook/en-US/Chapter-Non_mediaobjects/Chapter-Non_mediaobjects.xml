@@ -163,6 +163,40 @@
         <para>listitem 2</para>
       </listitem>
     </itemizedlist>
+
+    <para>With callout:</para>
+
+    <programlisting language="java">public class ClassName {<co xml:id="calloutClassName"/>
+
+    public void firstMethod() {<co xml:id="calloutFirstMethod"/>
+        ...
+    }
+
+    public void secondMethod() {<co xml:id="calloutSecondMethod"/>
+        ...
+    }
+
+}</programlisting>
+
+    <calloutlist>
+      <callout arearefs="calloutClassName">
+        <para>
+          The class name.
+        </para>
+      </callout>
+
+      <callout arearefs="calloutSecondMethod">
+        <para>
+          The second method. Deliberately in reserve order.
+        </para>
+      </callout>
+
+      <callout arearefs="calloutFirstMethod">
+        <para>
+          The first method.
+        </para>
+      </callout>
+    </calloutlist>
   </section>
 
   <section>
