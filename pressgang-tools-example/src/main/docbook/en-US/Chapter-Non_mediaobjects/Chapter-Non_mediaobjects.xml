@@ -121,23 +121,31 @@
 
     <programlisting language="java">public class HelloWorld {
 
-  public static void main(String[] args) {
-      // This is a comment
-      HelloWorld w = new HelloWorld();
-      w.say();
-  }
+    public static void main(String[] args) {
+        // This is a comment
+        HelloWorld w = new HelloWorld();
+        w.say();
+    }
 
-  private String greeting = "Hello";
+    private String greeting = "Hello";
 
-  public void say() {
-      System.out.println(greeting + ", world!");
-  }
+    public void say() {
+        System.out.println(greeting + ", world!");
+    }
 
-  ...
+    ...
 
 }</programlisting>
 
     <para>That class <literal>HelloWorld</literal> is a literal in this paragraph.</para>
+
+    <para>With a long line that is longer:</para>
+
+    <programlisting language="java">public class DefaultHelloWorldDecoratingFacadeFactory implements AbstractHelloWorldDecoratingFacadeFactory {
+
+    // That was a really long line which doesn't fit into 1 line in the html and pdf output and likewise this line is too long
+
+}</programlisting>
 
     <para>Then XML:</para>
 
