@@ -99,11 +99,11 @@ dt a {font-weight:normal;}
     background-color:#ede7c8;
     color:#333;
     padding:.5em 1em;
-    margin:0em;
+    margin:0;
 }
 
 pre, code, .guibutton, .keycap, .guilabel {
-    font-size:0.9em;
+    font-size:1em;
     font-family: courrier, monospace;
 }
 
@@ -346,30 +346,30 @@ table table td {
 
 table table {
     border:1px solid white !important;
-    font-size:.9em;
+    font-size:1em;
 }
 
 td.remarkval {
-    font-size:.9em;
+    font-size:1em;
     color:#444;
 }
 
-.defaultval {font-size:.8em}
+.defaultval {font-size:.9em}
 
-td.typeval {font-size:.8em}
+td.typeval {font-size:.9em}
 
 td.fieldval {
     font-weight:bold;
-    font-size:.9em;
+    font-size:1em;
 }
 
-th.dbkey {font-size:.9em;}
+th.dbkey {font-size:1em;}
 
 .lbname, .lbtype, .lbdescr, .lbdriver, .lbhost {
     color:white;
     font-weight:bold;
     background-color:#999;
-    font-size:0.9em;
+    font-size:1em;
     width:120px;
 }
 
@@ -449,17 +449,17 @@ span.chapter {
 .indexdiv {margin-bottom:1em;}
 
 .glossary dt, .index dt {
-    font-size:.9em;
+    font-size:1em;
     color:#444;
     padding-top:.5em;
 }
 
 .glossary dl dl dt, .index dl dl dt {
-    font-size:.85em;
+    font-size:.95em;
     color:#777;
     line-height:1.2em;
     font-weight:normal;
-    padding-top:0em;
+    padding-top:0;
 }
 
 .index dl dl dt:before {
@@ -475,7 +475,7 @@ span.chapter {
     padding:.2em 1em;
     background-color:#c8c5ac;
     font-size:.9em;
-    margin:0em;
+    margin:0;
     margin-bottom:.5em;
     color:#222;
 }
@@ -483,8 +483,8 @@ span.chapter {
 table .footnote {margin:1em .5em;}
 
 sup {
-    padding:0em .3em;
-    padding-left:0em;
+    padding:0 .3em;
+    padding-left:0;
 }
 
 .footnote {position:relative;}
@@ -538,8 +538,8 @@ div.abstract {font-size:larger;}
 .authorgroup {}
 
 .authorgroup h4 {
-    padding:0em;
-    margin:0em;
+    padding:0;
+    margin:0;
     margin-top:1em;
 }
 
@@ -554,8 +554,8 @@ div.abstract {font-size:larger;}
 }
 
 ul li p:last-child {
-    margin-bottom:0em;
-    padding-bottom:0em;
+    margin-bottom:0;
+    padding-bottom:0;
 }
 
 .page-break {
