@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:d="http://docbook.org/ns/docbook"
                 xmlns:jbh="java:org.jboss.highlight.renderer.FORenderer"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
-                exclude-result-prefixes="jbh">
+                exclude-result-prefixes="jbh d"
+                version="1.0">
 
     <!-- IMPORTS -->
     <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.76.1/fo/docbook.xsl"/>
@@ -796,7 +797,7 @@ book    nop
         NOTE : This stuff needs to go away ASAP!
         ###########################################################################################
     -->
-    <xsl:template match="programlisting">
+    <xsl:template match="d:programlisting">
 
         <xsl:variable name="language">
             <xsl:value-of select="s:toUpperCase(string(@language))" xmlns:s="java:java.lang.String"/>
