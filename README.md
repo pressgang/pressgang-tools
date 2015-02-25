@@ -294,6 +294,9 @@ Releasing
 
 		  $ mvn clean install
 
+    Note: releasing the module `pressgang-tools-example` is currently impossible because of a maven catch 22
+    Just comment it out and comment it back in afterwards.
+
 2. If everything is perfect, define the version and create the tag:
 
         $ mvn release:prepare

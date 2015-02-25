@@ -47,7 +47,7 @@
         <module>pressgang-fonts</module>            <!--base fonts used in the jbossorg styles-->
         <module>pressgang-xslt-ns</module>          <!-- namespaced (XSD variant) -->
         <module>pressgang-jdocbook-style</module>   <!--primary style module used for jbossorg blue and grey styles-->
-        <module>pressgang-tools-example</module>
+        <!--<module>pressgang-tools-example</module>-->
     </modules>
 
     <repositories>
