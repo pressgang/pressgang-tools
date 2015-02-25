@@ -3,7 +3,7 @@
 ol li, ul li {
     padding-left:.2em;
     padding-bottom:.5em;
-    margin:0em;
+    margin:0;
 }
 
 ul {
@@ -17,20 +17,24 @@ ul ul {
     list-style-type:circle;
 }
 
-dt {
-    font-weight:bold;
-    margin-bottom:0em;
-    padding-bottom:0em;
+dd {
+    margin: 0 0 0 2em;
+    padding-top:0;
 }
 
-dd {
-    margin:0em;
-    margin-left:2em;
-    padding-top:0em;
+dl {
+    margin:0;
+    padding:0;
+}
+
+dt {
+    font-weight:bold;
+    margin:0;
+    padding:0;
 }
 
 li p:first-child, dd p:first-child {
-    padding:0em;
+    padding:0;
     margin-top:.3em;
 }
 
