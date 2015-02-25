@@ -1,0 +1,6 @@
+Javascript libraries
+====================
+
+highlight.js version: 8.4
+Downloaded from: https://highlightjs.org/
+License: BSD (which can be used by Apache License v2.0 projects)

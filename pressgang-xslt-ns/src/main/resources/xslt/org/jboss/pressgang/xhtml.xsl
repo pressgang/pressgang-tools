@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:d="http://docbook.org/ns/docbook" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:d="http://docbook.org/ns/docbook"
+                xmlns="http://www.w3.org/1999/xhtml"
+                exclude-result-prefixes="d"
+                version="1.0">
 
     <!-- IMPORTS && INCLUDES -->
     <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.76.1/xhtml/chunk.xsl"/>
@@ -204,7 +208,5 @@
             </xsl:if>
         </xsl:if>
     </xsl:template>
-
-
 
 </xsl:stylesheet>

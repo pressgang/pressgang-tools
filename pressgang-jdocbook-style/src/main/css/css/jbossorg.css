@@ -2,7 +2,7 @@
 @import url("docnav.css");
 @import url("reports.css");
 @import url("extensions.css");
-@import url("codehighlight.css");
+@import url("../highlight.js/github.css");
 
 body {
     background-image:url(../images/community/bkg_gradient.gif);

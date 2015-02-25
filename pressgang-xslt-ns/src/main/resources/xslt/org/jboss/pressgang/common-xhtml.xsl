@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="1.0"
                 xmlns:d="http://docbook.org/ns/docbook"
-                xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory"
-                exclude-result-prefixes="#default">
+                xmlns="http://www.w3.org/1999/xhtml"
+                exclude-result-prefixes="d"
+                version="1.0">
 
     <!-- IMPORTS && INCLUDES -->
     <xsl:import href="common-base.xsl"/>
@@ -110,24 +110,31 @@ book    nop
         Used to add google analytics script.
     -->
     <xsl:template name="user.footer.content">
-      <xsl:if test="$html.googleAnalyticsId != ''">
-        <xsl:element name="script" namespace="http://www.w3.org/1999/xhtml">
-          <xsl:attribute name="type">
-            <xsl:text>text/javascript</xsl:text>
-          </xsl:attribute>
-          <xsl:text>
+        <script type="text/javascript" src="highlight.js/highlight.pack.js">
+            <!-- Workaround to force outputting "</script>". The space is required. -->
+            <xsl:text> </xsl:text>
+        </script>
+        <script type="text/javascript">
+            <xsl:text>hljs.initHighlightingOnLoad();</xsl:text>
+        </script>
+        <xsl:if test="$html.googleAnalyticsId != ''">
+            <xsl:element name="script" namespace="http://www.w3.org/1999/xhtml">
+                <xsl:attribute name="type">
+                    <xsl:text>text/javascript</xsl:text>
+                </xsl:attribute>
+                <xsl:text>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', '</xsl:text>
-          <xsl:value-of select="$html.googleAnalyticsId"/>
-          <xsl:text>']);
+                <xsl:value-of select="$html.googleAnalyticsId"/>
+                <xsl:text>']);
 _gaq.push(['_trackPageview']);
 (function() {
 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();</xsl:text>
-        </xsl:element>
-      </xsl:if>
+            </xsl:element>
+        </xsl:if>
     </xsl:template>
 
 
@@ -172,66 +179,26 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     </xsl:template>
 
     <!--
-        <programlisting/> highlighting using jHighLight
-
-        NOTE : This stuff needs to go away ASAP!
+        <programlisting/> highlighting using highlight.js (allows decent copy-pasting by end-users)
     -->
-    <xsl:template match="programlisting">
-
+    <xsl:template match="d:programlisting">
         <xsl:variable name="language">
-            <xsl:value-of select="s:toUpperCase(string(@language))" xmlns:s="java:java.lang.String"/>
+            <xsl:value-of select="s:toLowerCase(string(@language))" xmlns:s="java:java.lang.String"/>
         </xsl:variable>
-
-        <xsl:variable name="factory" select="rf:instance()"/>
-        <xsl:variable name="hiliter" select="rf:getRenderer($factory, string($language))"/>
-
-        <pre class="{$language}">
+        <pre>
             <xsl:choose>
-                <xsl:when test="$hiliter">
-                    <xsl:for-each select="node()">
-                        <xsl:choose>
-                            <xsl:when test="self::text()">
-                                <xsl:variable name="child.content" select="."/>
-                                <xsl:value-of
-                                        select="jhr:highlight($hiliter, $language, string($child.content), 'UTF-8', true())"
-                                        xmlns:jhr="com.uwyn.jhighlight.renderer.Renderer"
-                                        disable-output-escaping="yes"/>
-                            </xsl:when>
-
-                            <xsl:otherwise>
-                                <xsl:variable name="targets" select="key('id', @linkends)"/>
-                                <xsl:variable name="target" select="$targets[1]"/>
-                                <xsl:choose>
-                                    <xsl:when test="$target">
-                                        <a>
-                                            <xsl:if test="@id or @xml:id">
-                                                <xsl:attribute name="id">
-                                                    <xsl:value-of select="(@id|@xml:id)[1]"/>
-                                                </xsl:attribute>
-                                            </xsl:if>
-                                            <xsl:attribute name="href">
-                                                <xsl:call-template name="href.target">
-                                                    <xsl:with-param name="object" select="$target"/>
-                                                </xsl:call-template>
-                                            </xsl:attribute>
-                                            <xsl:apply-templates select="." mode="callout-bug"/>
-                                        </a>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:call-template name="anchor"/>
-                                        <xsl:apply-templates select="." mode="callout-bug"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:for-each>
+                <xsl:when test="$language != ''">
+                    <code class="language-{$language}">
+                        <xsl:apply-templates/>
+                    </code>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates/>
+                    <code class="no-highlight">
+                        <xsl:apply-templates/>
+                    </code>
                 </xsl:otherwise>
             </xsl:choose>
         </pre>
-
     </xsl:template>
 
     <!-- Forced line break -->
