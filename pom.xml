@@ -50,6 +50,22 @@
         <module>pressgang-tools-example</module>
     </modules>
 
+    <profiles>
+      <profile>
+        <id>fullProfile</id>
+        <activation>
+          <property>
+            <name>full</name>
+          </property>
+        </activation>
+        <modules>
+          <!-- TODO we cannot release pressgang-tools-examples by default because of a catch 22: -->
+          <!-- One of its plugins depends on one of the other modules -->
+          <module>pressgang-tools-example</module>
+        </modules>
+      </profile>
+    </profiles>
+
     <repositories>
         <!-- Conventions are described in http://community.jboss.org/wiki/MavenGettingStarted-Developers -->
         <repository>
