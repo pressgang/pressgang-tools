@@ -40,8 +40,6 @@
             </dependency>
           </dependencies>
 
-          <!-- TODO FIXME This does not build offline. https://issues.jboss.org/browse/PRESSGANG-79 -->
-
           <configuration>
             <sourceDocumentName>master.xml</sourceDocumentName>
             <masterTranslation>en-US</masterTranslation>
