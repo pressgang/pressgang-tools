@@ -292,7 +292,10 @@ Releasing
 
 1. First check it builds:
 
-		  $ mvn clean install
+		  $ mvn clean install -Dfull
+
+    The `-Dfull` will also build pressgang-tools-example (which can't be build during the release due to a catch 22).
+    Do a quick sanity check on the html and pdf output of that example.
 
 2. If everything is perfect, define the version and create the tag:
 
@@ -303,6 +306,8 @@ Releasing
 3. Deploy the artifacts:
 
         $ mvn release:perform
+
+    Afterwards manually upgrade the pressgang-tools-example parent version number.
 
 4. Go to [nexus](https://repository.jboss.org/nexus), menu item *Staging repositories*, find your staging repository.
    * Button *close*
