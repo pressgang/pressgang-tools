@@ -83,6 +83,8 @@
               <!-- To use Google Analytics: -->
               <!--<transformerParameters>-->
                 <!--<html.googleAnalyticsId>UA-XXXXXXX-X</html.googleAnalyticsId>-->
+                <!--<html.googleTagManagerId>GTM-NJWS5L</html.googleTagManagerId>-->
+                <!--<html.googleTagManagerChannel>PressgangToolsExample</html.googleTagManagerChannel>-->
               <!--</transformerParameters>-->
             </options>
           </configuration>
