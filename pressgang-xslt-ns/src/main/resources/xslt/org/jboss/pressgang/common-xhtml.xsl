@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:d="http://docbook.org/ns/docbook"
                 xmlns="http://www.w3.org/1999/xhtml"
-                exclude-result-prefixes="d"
+                exclude-result-prefixes="#default d"
                 version="1.0">
 
     <!-- IMPORTS && INCLUDES -->
@@ -23,8 +23,9 @@
     <xsl:param name="chunk.section.depth" select="0"/>
     <xsl:param name="chunk.first.sections" select="1"/>
     <xsl:param name="chunk.toc" select="''"/>
-    <xsl:param name="chunker.output.doctype-public" select="'-//W3C//DTD XHTML 1.0 Strict//EN'"/>
-    <xsl:param name="chunker.output.doctype-system" select="'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'"/>
+    <xsl:param name="chunker.output.omit-xml-declaration" select="'yes'" />
+    <xsl:param name="chunker.output.doctype-public" select="''"/>
+    <xsl:param name="chunker.output.doctype-system" select="''"/>
     <xsl:param name="chunker.output.encoding" select="'UTF-8'"/>
 
     <xsl:param name="graphicsize.extension">0</xsl:param>
@@ -93,10 +94,9 @@ book    nop
 
     <!-- TEMPLATES -->
     <xsl:output method="xml"
+                omit-xml-declaration="yes"
                 encoding="UTF-8"
-                standalone="no"
-                doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
-                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+                standalone="no"/>
 
     <!--
         Comes from xhtml/docbook.xsl
@@ -112,11 +112,11 @@ book    nop
         Used to add google analytics script.
     -->
     <xsl:template name="user.footer.content">
-        <script type="text/javascript" src="highlight.js/highlight.pack.js">
+        <script type="text/javascript" src="highlight.js/highlight.pack.js" xmlns="http://www.w3.org/1999/xhtml">
             <!-- Workaround to force outputting "</script>". The space is required. -->
             <xsl:text> </xsl:text>
         </script>
-        <script type="text/javascript">
+        <script type="text/javascript" xmlns="http://www.w3.org/1999/xhtml">
             <xsl:text>hljs.initHighlightingOnLoad();</xsl:text>
         </script>
         <xsl:if test="$html.googleAnalyticsId != ''">
@@ -220,17 +220,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 
     <!-- Forced line break -->
     <xsl:template match="processing-instruction('asciidoc-br')">
-        <br/>
+        <br xmlns="http://www.w3.org/1999/xhtml"/>
     </xsl:template>
 
     <!-- Forced page break -->
     <xsl:template match="processing-instruction('asciidoc-pagebreak')">
-       <div class="page-break"/>
+       <div class="page-break" xmlns="http://www.w3.org/1999/xhtml"/>
     </xsl:template>
 
     <!-- Horizontal ruler -->
     <xsl:template match="processing-instruction('asciidoc-hr')">
-        <hr/>
+        <hr xmlns="http://www.w3.org/1999/xhtml"/>
     </xsl:template>
 
 </xsl:stylesheet>

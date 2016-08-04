@@ -21,7 +21,7 @@
         <dependency>
             <groupId>net.sf.docbook</groupId>
             <artifactId>docbook-xsl</artifactId>
-            <version>1.76.1</version>
+            <version>1.79.1</version>
             <classifier>ns-resources</classifier>
             <type>zip</type>
         </dependency>

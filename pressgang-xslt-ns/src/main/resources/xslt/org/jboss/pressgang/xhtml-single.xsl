@@ -2,11 +2,11 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:d="http://docbook.org/ns/docbook"
                 xmlns="http://www.w3.org/1999/xhtml"
-                exclude-result-prefixes="d"
+                exclude-result-prefixes="#default d"
                 version="1.0">
 
     <!-- IMPORTS && INCLUDES -->
-    <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.76.1/xhtml/docbook.xsl"/>
+    <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.79.1/xhtml5/docbook.xsl"/>
     <xsl:include href="common-xhtml.xsl"/>
 
     <!--

@@ -7,7 +7,7 @@
                 version="1.0">
 
     <!-- IMPORTS -->
-    <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.76.1/fo/docbook.xsl"/>
+    <xsl:import href="http://docbook.sourceforge.net/release/xsl/1.79.1/fo/docbook.xsl"/>
 
     <!-- INCLUDES -->
     <xsl:include href="common-base.xsl"/>

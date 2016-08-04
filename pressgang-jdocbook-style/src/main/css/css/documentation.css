@@ -517,7 +517,7 @@ li p:first-child {
     padding:0em !important;
 }
 
-div.chapter, div.section {padding-top:2em;}
+section.chapter, section.section {padding-top:2em;}
 
 .revhistory {}
 

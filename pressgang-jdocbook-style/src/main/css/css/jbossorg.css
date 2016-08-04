@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color:transparent;
 }
 
-h1 {
+div.book > div.titlepage h1 {
     background-image:url(../images/community/title_hdr.png);
     background-repeat:no-repeat;
     border-top:1px dotted #CCCCCC;
@@ -48,21 +48,21 @@ h1 {
     padding:1.5em;
 }
 
-h2 {font-size:1.6em;}
+h1 {font-size:1.6em;}
 
-h3 {
+h2 {
     font-size:1.3em;
     padding-top:0em;
     padding-bottom:0em;
 }
 
-h4 {
+h3 {
     font-size:1.1em;
     padding-top:0em;
     padding-bottom:0em;
 }
 
-h5.formalpara {
+h4.formalpara {
     font-size:1em;
     margin-top:2em;
     margin-bottom:.8em;
