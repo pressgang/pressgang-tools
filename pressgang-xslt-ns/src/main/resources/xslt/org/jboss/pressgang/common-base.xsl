@@ -54,4 +54,15 @@
         <xsl:text>images/community/docbook/</xsl:text>
     </xsl:param>
 
+    <!--
+        Callout support
+    -->
+    <xsl:param name="callout.graphics" select="1"/>
+    <xsl:param name="callout.graphics.path">
+        <xsl:if test="$img.src.path != ''">
+            <xsl:value-of select="concat($img.src.path, 'callouts/')"/>
+        </xsl:if>
+        <xsl:text>images/community/docbook/callouts/</xsl:text>
+    </xsl:param>
+
 </xsl:stylesheet>
